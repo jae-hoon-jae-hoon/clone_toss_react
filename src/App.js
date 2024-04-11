@@ -1,7 +1,8 @@
 import { Reset } from "styled-reset";
-import "./App.css";
-import "./main.js";
 import { useState } from "react";
+
+import "./App.css";
+import Header from "./common/Header.js";
 
 function App() {
     let [headerFloat, setHeaderFloat] = useState("");
@@ -22,50 +23,61 @@ function App() {
         <div className="App">
             <Reset />
 
-            {/* <header>로고 GNB LangSwitch</header>
-            <body>섹션1 섹션2 섹션3</body>
-            <footer>푸터메뉴 회사정보 정보처리방침 sns버튼</footer> */}
+            {/* Header */}
+            <Header headerFloat={headerFloat}></Header>
 
-            <header id="header" className={"header " + headerFloat}>
-                <div className="inner df sb aic">
-                    <div className="logo">
-                        <a href="#" className="logo__link">
-                            <h1>Toss</h1>
-                        </a>
-                    </div>
-                    <div className="header__right df sb">
-                        <ul className="gnb df aic">
-                            <li>
-                                <a href="#">회사 소개</a>
-                            </li>
-                            <li>
-                                <a href="#">고객센터</a>
-                            </li>
-                            <li>
-                                <a href="#">자주 묻는 질문</a>
-                            </li>
-                            <li>
-                                <a href="#">토스인증서</a>
-                            </li>
-                            <li>
-                                <a href="#">채용</a>
-                            </li>
-                        </ul>
-
-                        <ul className="lang df aic">
-                            <li>
-                                <a href="#">KOR</a>
-                            </li>
-                            <li>
-                                <a href="#">ENG</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </header>
+            {/* Main */}
             <main className="main">
-                <section className="main-sec">asdasd</section>
+
+                {/* Section - Intro */}
+                <section className="main-sec intro">
+                    <div className="intro__linear-bg"></div>
+                    <div className="intro__wrap">
+                        <div className="intro__top">
+                            <p className="intro__text">금융의 모든 것 <br /> 토스에서 쉽고 간편하게</p>
+                            <div className="intro__btn-wrap">
+                                <a href="#" className="intro__app-btn">
+                                    <img src="https://static.toss.im/png-icons/timeline/applekorea.png" height="24" width="24" />
+                                    <span className="poppins">App Store</span>
+                                </a>
+                                <a href="#" className="intro__app-btn">
+                                    <img src="https://static.toss.im/png-icons/timeline/googleplay.png" height="24" width="24" />
+                                    <span className="poppins">Google Play</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div className="intro__bottom">
+                            <button className="intro__bottom-btn">
+                                <svg className="moving-svg"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <path d="M19 12l-7 7-7-7" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Section - Description */}
                 <section className="main-sec" style={{ background: "pink" }}>
+                    asdasd
+                </section>
+
+                {/* Section - 홈·소비 */}
+                <section className="main-sec" style={{ background: "skyblue" }}>
+                    asdasd
+                </section>
+
+                {/* Section - 투자 */}
+                <section className="main-sec" style={{ background: "yellowgreen" }}>
                     asdasd
                 </section>
             </main>
