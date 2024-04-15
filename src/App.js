@@ -78,8 +78,31 @@ function App() {
                 </section>
 
                 {/* Section - 홈·소비 */}
-                <section className="main-sec" style={{ background: "skyblue" }}>
-                    asdasd
+                <section className="main-sec consumption">
+                    <div className="inner">
+                        <h1 className="main-sec__title">홈·소비</h1>
+                        <p className="main-sec__desc">
+                            내 돈 관리,<br />
+                            지출부터 일정까지<br />
+                            똑똑하게
+                        </p>
+                        <div className="consumption__img-wrap">
+                            <div className="consumption__img-item">
+                                <img></img>
+                                <img></img>
+                            </div>
+
+                            <div className="consumption__img-item">
+                                <img></img>
+                                <img></img>
+                            </div>
+                        </div>
+                        <p className="consumption__desc">
+                            토스에 계좌와 카드를 연결해 보세요.<br />
+                            계좌 잔액, 대출·투자 내역은 기본,<br />
+                            일자별 소비와 수입까지 한 번에 볼 수 있어요.
+                        </p>
+                    </div>
                 </section>
 
                 {/* Section - 투자 */}
@@ -93,7 +116,7 @@ function App() {
     );
 }
 
-function scroll_next_section(){
+function scroll_next_section() {
     let headerHeight = document.getElementById("header").offsetHeight
     let sectionDesc = document.getElementById('section_desc').offsetTop;
     let offsetTop = sectionDesc - headerHeight
