@@ -3,6 +3,8 @@
 
 .App {
   font-family: "Noto Sans KR", sans-serif;
+
+  overflow: hidden;
 }
 
 .poppins {
@@ -54,17 +56,21 @@ a:active {
   opacity: 0;
   transition: all 1s ease;
 }
-.elem_animate.up{
-  transform: translateY(50px);
+
+.elem_animate.up {
+  transform: translateY(80px);
 }
-.elem_animate.down{
-  transform: translateY(-50px);
+
+.elem_animate.down {
+  transform: translateY(-80px);
 }
-.elem_animate.left{
-  transform: translateX(50px);
+
+.elem_animate.left {
+  transform: translateX(80px);
 }
-.elem_animate.right{
-  transform: translateX(-50px);
+
+.elem_animate.right {
+  transform: translateX(-80px);
 }
 
 .elem_animate.animated {
@@ -193,6 +199,12 @@ a:active {
   font-weight: 700;
   line-height: 1.4;
   z-index: 100;
+}
+
+.main-sec__small-desc {
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 
@@ -360,9 +372,83 @@ a:active {
   position: absolute;
   bottom: 160px;
   right: 30px;
-  font-size: 23px;
-  font-weight: 600;
-  line-height: 1.5;
 }
 
+
+
 /* 투자 */
+.main-sec.invest {
+  height: auto;
+  padding: 250px 0;
+}
+
+
+
+
+
+.invest__desc {
+  text-align: center;
+}
+
+.invest__content-wrap {
+  position: relative;
+}
+
+.invest__img-wrap {
+  position: relative;
+  width: 600px;
+  height: 936px;
+  margin: 0 auto;
+}
+
+.invest__img-bg {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.invest__img-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 57%;
+  translate: -50% -50%;
+  z-index: 1;
+}
+
+.invest__img-list {
+  display: flex;
+  gap: 16px;
+  position: absolute;
+  left: 50%;
+  bottom: 124px;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.invest__img-item {
+  width: 178px;
+  height: 178px;
+  opacity: 0;
+}
+.invest__img-item.show{
+  opacity: 1;
+}
+
+.invest__img-item img{
+  width: 100%;
+}
+
+.invest__desc-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  width: 100%;
+  max-width: 930px;
+  padding-left: 30px;
+  translate: -50% -50%;
+  z-index: 3;
+}

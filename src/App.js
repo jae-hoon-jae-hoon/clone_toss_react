@@ -1,11 +1,49 @@
 import { Reset } from "styled-reset";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useLayoutEffect } from "react";
+
+// GSAP
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import "./App.css";
 import Header from "./common/Header.js";
 
 function App() {
     let [headerFloat, setHeaderFloat] = useState("");
+
+    // GSAP - ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+    const testContainerRef = useRef(null);
+    const testItemRef = useRef([]);
+    const testContainer = testContainerRef.current;
+    const testItem = testItemRef.current;
+    useLayoutEffect(() => {
+        const context = gsap.context(() => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    target: testItem,
+                    trigger: testContainer,
+                    start: "25% 20%",
+                    end: "80% 90%",
+                    scrub: 1,
+                    // markers: true,
+                }
+            })
+            tl.to(testItem[3], { opacity: 1 }, "act")
+            tl.to(testItem[3], { opacity: 1 }, "act0")
+            tl.to(testItem[2], { opacity: 1 }, "act1")
+            tl.to(testItem[4], { opacity: 1 }, "act1")
+            tl.to(testItem[1], { opacity: 1 }, "act2")
+            tl.to(testItem[5], { opacity: 1 }, "act2")
+            tl.to(testItem[0], { opacity: 0.4, delay: 0.4 }, "act2")
+            tl.to(testItem[6], { opacity: 0.4, delay: 0.4 }, "act2")
+            tl.to(testItem[0], { opacity: 1 }, "act3")
+            tl.to(testItem[6], { opacity: 1 }, "act3")
+        })
+
+        return () => context.revert()
+    })
+
 
     useEffect(() => {
         function headerFloat() {
@@ -131,7 +169,7 @@ function App() {
                                     <img src="/imgs/main/consumption_img_bg.png" className="consumption__img-bg" />
                                 </div>
                             </div>
-                            <p className="consumption__desc elem_animate up">
+                            <p className="consumption__desc main-sec__small-desc elem_animate up">
                                 토스에 계좌와 카드를 연결해 보세요.<br />
                                 계좌 잔액, 대출·투자 내역은 기본,<br />
                                 일자별 소비와 수입까지 한 번에 볼 수 있어요.
@@ -141,17 +179,72 @@ function App() {
                 </section>
 
                 {/* Section - 투자 */}
-                <section className="main-sec">
+                <section className="main-sec invest" ref={testContainerRef}>
                     <div className="inner">
                         <div className="main-sec__wrap">
-                            ㅁㄴㅇㅁㄴㅇ
+                            <h1 className="main-sec__title">투자</h1>
+                            <p className="main-sec__desc">
+                                투자,<br />
+                                모두가 할 수 있도록
+                            </p>
+
+                            <div className="invest__content-wrap">
+                                <div className="invest__img-wrap">
+                                    <img src="/imgs/main/invest_img_1.png" className="invest__img-img" />
+                                    <img src="/imgs/main/consumption_img_bg.png" className="invest__img-bg" />
+                                    <div className="invest__img-list">
+                                        <div className="invest__img-item" ref={ref => testItemRef.current[0] = ref}>
+                                            <img src="/imgs/main/invest_img_6.png" />
+                                        </div>
+                                        <div className="invest__img-item" ref={ref => testItemRef.current[1] = ref}>
+                                            <img src="/imgs/main/invest_img_8.png" />
+                                        </div>
+                                        <div className="invest__img-item" ref={ref => testItemRef.current[2] = ref}>
+                                            <img src="/imgs/main/invest_img_7.png" />
+                                        </div>
+                                        <div className="invest__img-item show" ref={ref => testItemRef.current[3] = ref}>
+                                            <img src="/imgs/main/invest_img_5.png" />
+                                        </div>
+                                        <div className="invest__img-item" ref={ref => testItemRef.current[4] = ref}>
+                                            <img src="/imgs/main/invest_img_2.png" />
+                                        </div>
+                                        <div className="invest__img-item" ref={ref => testItemRef.current[5] = ref}>
+                                            <img src="/imgs/main/invest_img_4.png" />
+                                        </div>
+                                        <div className="invest__img-item" ref={ref => testItemRef.current[6] = ref}>
+                                            <img src="/imgs/main/invest_img_3.png" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="invest__desc-wrap">
+                                    <p className="main-sec__small-desc">
+                                        이해하기 쉬운 용어<br />
+                                        설명이 필요 없는<br />
+                                        직관적인 화면 구성
+                                    </p>
+                                    <p className="main-sec__small-desc">
+                                        송금처럼 쉬운 구매 경험<br />
+                                        그리고 투자 판단에<br />
+                                        도움을 주는 콘텐츠까지
+                                    </p>
+                                </div>
+                            </div>
+
+                            <p className="invest__desc main-sec__small-desc">
+                                별도 앱 설치 없이 토스에서 바로,<br />
+                                토스증권으로 나만의 투자를 시작해 보세요.
+                            </p>
                         </div>
                     </div>
                 </section>
+
+                {/* 꼭 필요했던 금융 - 사진 열리는 효과 */}
+                <section className="main-sec"></section>
             </main>
 
             {/* <footer>푸터메뉴 회사정보 정보처리방침 sns버튼</footer> */}
-        </div>
+        </div >
     );
 }
 
