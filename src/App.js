@@ -23,7 +23,7 @@ function App() {
                 scrollTrigger: {
                     target: testItem,
                     trigger: testContainer,
-                    start: "25% 20%",
+                    start: "25% 20%", // 컨테이너위치 윈도우스크롤위치
                     end: "80% 90%",
                     scrub: 1,
                     // markers: true,
