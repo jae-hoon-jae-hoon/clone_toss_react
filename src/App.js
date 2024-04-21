@@ -9,42 +9,68 @@ import "./App.css";
 import Header from "./common/Header.js";
 
 function App() {
-    let [headerFloat, setHeaderFloat] = useState("");
 
     // GSAP - ScrollTrigger
+    // 투자 아이콘
     gsap.registerPlugin(ScrollTrigger);
-    const testContainerRef = useRef(null);
-    const testItemRef = useRef([]);
-    const testContainer = testContainerRef.current;
-    const testItem = testItemRef.current;
+    const investContainerRef = useRef(null);
+    const investItemRef = useRef([]);
+    const investContainer = investContainerRef.current;
+    const investItem = investItemRef.current;
     useLayoutEffect(() => {
         const context = gsap.context(() => {
             const tl = gsap.timeline({
                 scrollTrigger: {
-                    target: testItem,
-                    trigger: testContainer,
+                    target: investItem,
+                    trigger: investContainer,
                     start: "25% 20%", // 컨테이너위치 윈도우스크롤위치
                     end: "80% 90%",
                     scrub: 1,
                     // markers: true,
                 }
             })
-            tl.to(testItem[3], { opacity: 1 }, "act")
-            tl.to(testItem[3], { opacity: 1 }, "act0")
-            tl.to(testItem[2], { opacity: 1 }, "act1")
-            tl.to(testItem[4], { opacity: 1 }, "act1")
-            tl.to(testItem[1], { opacity: 1 }, "act2")
-            tl.to(testItem[5], { opacity: 1 }, "act2")
-            tl.to(testItem[0], { opacity: 0.4, delay: 0.4 }, "act2")
-            tl.to(testItem[6], { opacity: 0.4, delay: 0.4 }, "act2")
-            tl.to(testItem[0], { opacity: 1 }, "act3")
-            tl.to(testItem[6], { opacity: 1 }, "act3")
+            tl.to(investItem[3], { opacity: 1 }, "act")
+            tl.to(investItem[3], { opacity: 1 }, "act0")
+            tl.to(investItem[2], { opacity: 1 }, "act1")
+            tl.to(investItem[4], { opacity: 1 }, "act1")
+            tl.to(investItem[1], { opacity: 1 }, "act2")
+            tl.to(investItem[5], { opacity: 1 }, "act2")
+            tl.to(investItem[0], { opacity: 0.4, delay: 0.1 }, "act2")
+            tl.to(investItem[6], { opacity: 0.4, delay: 0.1 }, "act2")
+            tl.to(investItem[0], { opacity: 1 }, "act3")
+            tl.to(investItem[6], { opacity: 1 }, "act3")
+        })
+
+        return () => context.revert()
+    })
+
+    // 금융 배경 애니메이션
+    const financeContainerRef = useRef(null);
+    const financeItemRef = useRef([]);
+    const financeContainer = financeContainerRef.current;
+    const financeItem = financeItemRef.current;
+    useLayoutEffect(() => {
+        const context = gsap.context(() => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    target: financeItem,
+                    trigger: financeContainer,
+                    start: "25% bottom", // 컨테이너위치 윈도우스크롤위치
+                    end: "15% start",
+                    scrub: true,
+                    // markers: true,
+                }
+            })
+            tl.to(financeItem[0], { left:"-25%" }, "act")
+            tl.to(financeItem[1], { right:"-25%" }, "act")
         })
 
         return () => context.revert()
     })
 
 
+    // Header float
+    let [headerFloat, setHeaderFloat] = useState("");
     useEffect(() => {
         function headerFloat() {
             let scrollTop = document.documentElement.scrollTop;
@@ -179,7 +205,7 @@ function App() {
                 </section>
 
                 {/* Section - 투자 */}
-                <section className="main-sec invest" ref={testContainerRef}>
+                <section className="main-sec invest" ref={investContainerRef}>
                     <div className="inner">
                         <div className="main-sec__wrap">
                             <h1 className="main-sec__title">투자</h1>
@@ -193,25 +219,25 @@ function App() {
                                     <img src="/imgs/main/invest_img_1.png" className="invest__img-img" />
                                     <img src="/imgs/main/consumption_img_bg.png" className="invest__img-bg" />
                                     <div className="invest__img-list">
-                                        <div className="invest__img-item" ref={ref => testItemRef.current[0] = ref}>
+                                        <div className="invest__img-item" ref={ref => investItemRef.current[0] = ref}>
                                             <img src="/imgs/main/invest_img_6.png" />
                                         </div>
-                                        <div className="invest__img-item" ref={ref => testItemRef.current[1] = ref}>
+                                        <div className="invest__img-item" ref={ref => investItemRef.current[1] = ref}>
                                             <img src="/imgs/main/invest_img_8.png" />
                                         </div>
-                                        <div className="invest__img-item" ref={ref => testItemRef.current[2] = ref}>
+                                        <div className="invest__img-item" ref={ref => investItemRef.current[2] = ref}>
                                             <img src="/imgs/main/invest_img_7.png" />
                                         </div>
-                                        <div className="invest__img-item show" ref={ref => testItemRef.current[3] = ref}>
+                                        <div className="invest__img-item show" ref={ref => investItemRef.current[3] = ref}>
                                             <img src="/imgs/main/invest_img_5.png" />
                                         </div>
-                                        <div className="invest__img-item" ref={ref => testItemRef.current[4] = ref}>
+                                        <div className="invest__img-item" ref={ref => investItemRef.current[4] = ref}>
                                             <img src="/imgs/main/invest_img_2.png" />
                                         </div>
-                                        <div className="invest__img-item" ref={ref => testItemRef.current[5] = ref}>
+                                        <div className="invest__img-item" ref={ref => investItemRef.current[5] = ref}>
                                             <img src="/imgs/main/invest_img_4.png" />
                                         </div>
-                                        <div className="invest__img-item" ref={ref => testItemRef.current[6] = ref}>
+                                        <div className="invest__img-item" ref={ref => investItemRef.current[6] = ref}>
                                             <img src="/imgs/main/invest_img_3.png" />
                                         </div>
                                     </div>
@@ -239,7 +265,18 @@ function App() {
                     </div>
                 </section>
 
-                {/* 꼭 필요했던 금융 - 사진 열리는 효과 */}
+                {/* Section - 꼭 필요했던 금융(사진 열리는 효과) */}
+                <section className="main-sec finance" ref={financeContainerRef}>
+                    <div className="inner">
+                        <div className="main-sec__wrap">
+                            <div className="finance-text">꼭 필요했던 금융</div>
+                        </div>
+                    </div>
+
+                    <div className="animation-bg left" ref={ref => financeItemRef.current[0] = ref}></div>
+                    <div className="animation-bg right" ref={ref => financeItemRef.current[1] = ref}></div>
+                </section>
+
                 <section className="main-sec"></section>
             </main>
 

@@ -382,10 +382,6 @@ a:active {
   padding: 250px 0;
 }
 
-
-
-
-
 .invest__desc {
   text-align: center;
 }
@@ -431,11 +427,12 @@ a:active {
   height: 178px;
   opacity: 0;
 }
-.invest__img-item.show{
+
+.invest__img-item.show {
   opacity: 1;
 }
 
-.invest__img-item img{
+.invest__img-item img {
   width: 100%;
 }
 
@@ -451,4 +448,35 @@ a:active {
   padding-left: 30px;
   translate: -50% -50%;
   z-index: 3;
+}
+
+
+/* 금융 */
+.main-sec.finance {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(./../public/imgs/main/section5_bg.jpg) no-repeat center / cover;
+}
+
+.finance-text {
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #f9fafb;
+  text-align: center;
+}
+
+.animation-bg {
+  position: absolute;
+  top: 0;
+  width: calc((100vw - 1040px) / 2);
+  height: 100%;
+  background-color: #fff;
+}
+.animation-bg.left{
+  left: 0;
+}
+.animation-bg.right{
+  right: 0;
 }
