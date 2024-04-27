@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import "./App.css";
 import Header from "./common/Header.js";
+import Footer from "./common/Footer.js";
 
 function App() {
 
@@ -61,8 +62,8 @@ function App() {
                     // markers: true,
                 }
             })
-            tl.to(financeItem[0], { left:"-25%" }, "act")
-            tl.to(financeItem[1], { right:"-25%" }, "act")
+            tl.to(financeItem[0], { left: "-25%" }, "act")
+            tl.to(financeItem[1], { right: "-25%" }, "act")
         })
 
         return () => context.revert()
@@ -280,7 +281,8 @@ function App() {
                 <section className="main-sec"></section>
             </main>
 
-            {/* <footer>푸터메뉴 회사정보 정보처리방침 sns버튼</footer> */}
+            {/* Footer */}
+            <Footer></Footer>
         </div >
     );
 }

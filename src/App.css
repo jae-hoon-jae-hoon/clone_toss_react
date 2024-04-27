@@ -28,7 +28,8 @@ a {
 a:hover,
 a:active {
   text-decoration: none;
-  color: #000;
+  /* color: #000; */
+  color: inherit;
   background-color: transparent;
 }
 
@@ -103,6 +104,148 @@ a:active {
 .header__right {
   gap: 0 50px
 }
+
+/* ************************************ */
+/* Footer */
+/* ************************************ */
+.footer {
+  padding: 50px 0 100px;
+  background-color: #191f28;
+}
+
+.footer .inner {
+  max-width: 1064px;
+  padding: 0 67px;
+}
+
+/* footer gnb */
+.f-gnb {}
+
+.f-gnb__list {
+  display: flex;
+  padding-bottom: 50px;
+}
+
+.f-gnb__item {
+  min-width: 170px;
+  max-width: 25%;
+}
+
+.f-gnb__item:last-child {
+  max-width: none;
+}
+
+.f-gnb__dep1 {
+  padding-bottom: 5px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #b0b8c1;
+  line-height: 30px;
+}
+
+.f-gnb__sub-list {}
+
+.f-gnb__sub-item {}
+
+.f-gnb__sub-item a {
+  display: inline-block;
+  font-size: 15px;
+  color: #6b7684;
+  line-height: 30px;
+}
+
+.f-gnb__sub-item a:hover {
+  text-decoration: underline;
+}
+
+/* company info */
+.company-info {}
+
+.company-info__title {
+  padding-bottom: 16px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #b0b8c1;
+}
+
+.company-info__address {
+  font-size: 13px;
+  color: #8b95a1;
+  line-height: 20px;
+  letter-spacing: -0.3px;
+}
+
+.chk-business-info {
+  font-size: 12px;
+  color: #6b7684;
+}
+
+.chk-business-info:hover {
+  text-decoration: underline;
+  /* color: #6b7684; */
+}
+
+/* terms info */
+.terms-info {
+  padding: 24px 0 30px;
+}
+
+.terms-info__list {
+  /* display: flex;
+  flex-wrap: wrap;
+  width: 720px; */
+  display: inline-grid;
+  grid-template-columns: repeat(4, auto);
+  column-gap: 34px;
+  row-gap: 4px;
+}
+
+.terms-info__item {
+  /* width: 25%; */
+}
+
+.terms-info__item a {
+  font-size: 13px;
+  color: #6b7684;
+  line-height: 18px;
+  letter-spacing: -0.5px;
+}
+
+.terms-info__item a:hover {
+  text-decoration: underline;
+}
+
+.terms-info__item.strong a {
+  font-weight: 700;
+  color: #b0b8c1;
+}
+
+/* sns info */
+.sns-info {}
+
+.sns-info__list {
+  display: flex;
+  gap: 0 8px;
+}
+
+.sns-info__list li a {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  transition: opacity .2s ease;
+  border-radius: 50%;
+  opacity: .7;
+  cursor: pointer;
+}
+
+.sns-info__list li a:hover {
+  opacity: 1;
+}
+
+.sns-info__list li a img {
+  max-width: 100%;
+}
+
 
 /* logo */
 .logo {}
@@ -474,9 +617,11 @@ a:active {
   height: 100%;
   background-color: #fff;
 }
-.animation-bg.left{
+
+.animation-bg.left {
   left: 0;
 }
-.animation-bg.right{
+
+.animation-bg.right {
   right: 0;
 }
