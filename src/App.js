@@ -1,6 +1,12 @@
 import { Reset } from "styled-reset";
 import { useEffect, useState, useRef, useLayoutEffect } from "react";
 
+// SWIPER
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, EffectFade } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+
 // GSAP
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -10,6 +16,11 @@ import Header from "./common/Header.js";
 import Footer from "./common/Footer.js";
 
 function App() {
+
+    // 대출 이미지 슬라이드
+    useLayoutEffect(() => {
+
+    }, [])
 
     // GSAP - ScrollTrigger
     // 투자 아이콘
@@ -115,6 +126,7 @@ function App() {
         };
     }, []);
 
+    // Render
     return (
         <div className="App">
             <Reset />
@@ -218,7 +230,7 @@ function App() {
                             <div className="transfer__content-wrap">
                                 <ul className="transfer__list">
                                     <li className="transfer__item">
-                                        <div class="transfer__item-left elem_animate up">
+                                        <div className="transfer__item-left elem_animate up">
                                             <p className="transfer__item-title">
                                                 평생 무료 송금
                                             </p>
@@ -236,7 +248,7 @@ function App() {
                                         </div>
                                     </li>
                                     <li className="transfer__item">
-                                        <div class="transfer__item-left elem_animate up">
+                                        <div className="transfer__item-left elem_animate up">
                                             <p className="transfer__item-title">
                                                 사기계좌 조회
                                             </p>
@@ -255,7 +267,7 @@ function App() {
                                         </div>
                                     </li>
                                     <li className="transfer__item">
-                                        <div class="transfer__item-left elem_animate up">
+                                        <div className="transfer__item-left elem_animate up">
                                             <p className="transfer__item-title">
                                                 자동이체 예약
                                             </p>
@@ -279,8 +291,76 @@ function App() {
                 </section>
 
                 {/* Section - 대출 */}
+                <section className="main-sec loan">
+                    <div className="inner">
+                        <div className="main-sec__wrap">
+                            <div className="loan__wrap">
+                                <div className="loan__left">
+                                    <h1 className="main-sec__title elem_animate up">대출</h1>
+                                    <p className="main-sec__desc elem_animate up">
+                                        여러 은행의 조건을<br />
+                                        1분 만에<br />
+                                        확인해보세요
+                                    </p>
+
+                                    <div className="loan__desc-wrap">
+                                        <div className="loan__desc-bold ">
+                                            <p className="elem_animate up">한도는 높게,</p>
+                                            <p className="elem_animate up">금리는 <span className="gray">낮게,</span></p>
+                                            <p className="elem_animate up">부담은 <span className="lightgray">적게.</span></p>
+                                        </div>
+                                        <div className="loan__desc-small">
+                                            앉은 자리에서 여러 은행의 한도와 금리를 비교하고<br />
+                                            내게 꼭 맞는 대출을 찾아보세요.<br />
+                                            신용, 비상금, 대환, 주택담보대출 모두 가능해요.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="loan__right">
+                                    <div id="loan-img-slide" className="loan__img-wrap">
+                                        {/* swiper 사용해서 fade 효과 적용하기 */}
+                                        <Swiper
+                                            effect={'fade'}
+                                            autoplay={{
+                                                delay: 3000,
+                                                disableOnInteraction: false,
+                                            }}
+                                            modules={[Autoplay, EffectFade]}
+                                        >
+                                            <SwiperSlide>
+                                                <img src="/imgs/main/loan_img_1.png" className="loan__img-item" />
+                                            </SwiperSlide>
+                                            <SwiperSlide>
+                                                <img src="/imgs/main/loan_img_2.png" className="loan__img-item" />
+                                            </SwiperSlide>
+                                        </Swiper>
+
+                                        <img src="/imgs/main/consumption_img_bg.png" className="loan__img-bg" />
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
                 {/* Section - 신용 */}
+                <section className="main-sec credit">
+                    <div className="inner">
+                        <div className="main-sec__wrap">
+                            <h1 className="main-sec__title elem_animate up">신용</h1>
+                            <p className="main-sec__desc elem_animate up">
+                                금융 생활의 첫 걸음,<br />
+                                신용점수를 미리<br />
+                                무료로 관리하세요
+                            </p>
+                            <div className="credit__wrap">
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
                 {/* Section - 투자 */}
                 <section className="main-sec invest" ref={investContainerRef}>

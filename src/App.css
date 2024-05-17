@@ -587,6 +587,79 @@ a:active {
   max-width: 100%;
 }
 
+/* 송금 */
+.main-sec.loan {
+  height: auto;
+}
+
+.loan__wrap {
+  display: flex;
+}
+
+.loan__left {
+  width: 50%;
+}
+
+.loan__desc-wrap {
+  margin-top: 210px;
+}
+
+.loan__desc-bold {
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 46px;
+  color: rgb(51, 61, 75);
+  line-height: 1.5;
+}
+
+.loan__desc-bold .gray {
+  color: #8b95a1
+}
+
+.loan__desc-bold .lightgray {
+  color: #d1d6db
+}
+
+.loan__desc-small {
+  font-weight: 600;
+  font-size: 21px;
+  color: rgb(51, 61, 75);
+  line-height: 1.5;
+}
+
+.loan__right {
+  position: relative;
+  width: 50%;
+}
+
+.loan__img-wrap {
+  height: 100%;
+}
+
+.loan__img-wrap .swiper {
+  position: absolute;
+  width: 57%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loan__img-bg {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.loan__img-item {
+  max-width: 100%;
+}
+
+/* 신용 */
+.main-sec.credit {
+  height: auto;
+  padding: 250px 0;
+}
+
 /* 투자 */
 .main-sec.invest {
   height: auto;
