@@ -355,8 +355,41 @@ function App() {
                                 신용점수를 미리<br />
                                 무료로 관리하세요
                             </p>
-                            <div className="credit__wrap">
-
+                            <div className="credit__content-wrap">
+                                <div className="credit__layout elem_animate up">
+                                    <div className="credit__layout-item">
+                                        <img src="/imgs/main/credit_img_1.png" alt="credit image 1" className="credit__layout-img" />
+                                        <p className="credit__layout-title">내 신용점수</p>
+                                        <p className="credit__layout-desc">
+                                            언제 어디서든, 원할 때 간편하게<br />
+                                            KCB, NICE 신용점수를 한 곳에서 확인할 수 있어요.
+                                        </p>
+                                    </div>
+                                    <div className="credit__layout-item">
+                                        <img src="/imgs/main/credit_img_2.png" alt="credit image 2" className="credit__layout-img" />
+                                        <p className="credit__layout-title">신용점수 올리기</p>
+                                        <p className="credit__layout-desc">
+                                            통신비, 일반 납부내역 등의 서류를<br />
+                                            토스에서 바로 제출해 신용점수를 올릴 수 있어요.
+                                        </p>
+                                    </div>
+                                    <div className="credit__layout-item">
+                                        <img src="/imgs/main/credit_img_3.png" alt="credit image 3" className="credit__layout-img" />
+                                        <p className="credit__layout-title">신용관리 알림</p>
+                                        <p className="credit__layout-desc">
+                                            신용점수에 변동이 생기면 토스가 알람을 보내드려요.<br />
+                                            나의 신용점수가 바뀔 때마다 바로 확인하세요.
+                                        </p>
+                                    </div>
+                                    <div className="credit__layout-item">
+                                        <img src="/imgs/main/credit_img_4.png" alt="credit image 4" className="credit__layout-img" />
+                                        <p className="credit__layout-title">신용관리 팁</p>
+                                        <p className="credit__layout-desc">
+                                            신용점수 관리가 막막하다면?<br />
+                                            신용관리 팁 콘텐츠를 한번 읽어보세요.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -435,9 +468,129 @@ function App() {
                     <div className="animation-bg right" ref={ref => financeItemRef.current[1] = ref}></div>
                 </section>
 
-                <section className="main-sec"></section>
+                {/* Section - ⚽토스로 나에게 딱 맞게 */}
+                <section className="main-sec fit">
+                    <div className="inner">
+                        <div className="main-sec__wrap">
+                            <p className="main-sec__desc elem_animate up">
+                                토스로 <br />
+                                나에게 딱 맞게
+                            </p>
+                            <div className="fit__content-wrap">
+                                <div className="fit-section">
+                                    <div className="fit-section__item">
+                                        <div className="img-wrap">
+                                            <img src="/imgs/main/fit_img_1.jpg" alt="" className="img" />
+                                        </div>
+                                        <div className="fit-section__title">
+                                            내 문서함 <span className="gray">공공문서 확인부터 납부까지 한 번에</span>
+                                        </div>
+                                        <div className="fit-section__desc">
+                                            건강검진, 국가장학금 신청, 교통범칙금·과태료 납부.<br />
+                                            그동안 종이로 받았던 문서들 꼼꼼히 챙기느라 고생했어요.<br />
+                                            앞으로는 토스 내 문서함에서 간단히 받아보고 납부할 수 있어요.
+                                        </div>
+                                    </div>
+                                </div>
 
-                {/* Section - 사업 */}
+
+                                <div className="fit-section">
+                                    <div className="fit-section__item">
+                                        <div className="img-wrap">
+                                            <img src="/imgs/main/fit_img_2.jpg" alt="" className="img" />
+                                        </div>
+                                        <div className="fit-section__title">
+                                            보험<br />
+                                            <span className="gray">조회부터 상담,<br /> 병원비 돌려받기를 간편하게 </span>
+                                        </div>
+                                    </div>
+                                    <div className="fit-section__item">
+                                        <div className="img-wrap">
+                                            <img src="/imgs/main/fit_img_3.jpg" alt="" className="img" />
+                                        </div>
+                                        <div className="fit-section__desc">
+                                            또래보다 보험료는 적절하게 내고 있는지, 낸 만큼 보장받고 있는지 확인해 보세요.<br />
+                                            전문가와의 상담을 통해 내게 딱 맞는 보험을 추천 받고, 병원비를 간편하게 청구할 수 있어요.
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div className="fit-section">
+                                    <div className="fit-section__item">
+                                        <div className="img-wrap">
+                                            <img src="/imgs/main/fit_img_4.jpg" alt="" className="img" />
+                                        </div>
+                                        <div className="text-wrap">
+                                            <div className="fit-section__title">
+                                                내 부동산 · 자동차<br />
+                                                <span className="gray">정기적으로 관리해보세요</span>
+                                            </div>
+                                            <div className="fit-section__desc">
+                                                집과 자동차의 공통점은 잘 사서, 잘 관리하고, 잘 팔아야 한다는 것.<br />
+                                                시세조회부터 아파트 관리비 납부, 자동차 보험료 조회까지 부동산과 자동차 관리도 토스에서 시작해 보세요.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                {/* Section - 알면 좋은 금융 */}
+                <section className="main-sec finance-service">
+                    <div className="inner">
+                        <div className="main-sec__wrap">
+                            <h1 className="main-sec__title elem_animate up">알면 좋은 금융</h1>
+                            <p className="main-sec__desc elem_animate up">
+                                이런 서비스도 <br />
+                                한번 써보세요
+                            </p>
+                            <div className="credit__content-wrap">
+                                <div className="credit__layout elem_animate up">
+                                    <div className="credit__layout-item">
+                                        <img src="/imgs/main/finance_service_img_1.png" alt="credit image 1" className="credit__layout-img" />
+                                        <p className="credit__layout-title">숨은 정부지원금 찾기</p>
+                                        <p className="credit__layout-desc">
+                                            생각지도 못한 지원금이 기다리고 있어요.<br />
+                                            간단한 정보를 입력 후 받을 수 있는<br />
+                                            정부지원금을 확인해보세요.
+                                        </p>
+                                    </div>
+                                    <div className="credit__layout-item">
+                                        <img src="/imgs/main/finance_service_img_2.png" alt="credit image 2" className="credit__layout-img" />
+                                        <p className="credit__layout-title">카드 혜택 추천</p>
+                                        <p className="credit__layout-desc">
+                                            이제, 카드를 내 생활패턴에 맞게.<br />
+                                            여러 카드를 한 번에 비교하고 내게 꼭 맞는 카드를 선택해 보세요.
+                                        </p>
+                                    </div>
+                                    <div className="credit__layout-item">
+                                        <img src="/imgs/main/finance_service_img_3.png" alt="credit image 3" className="credit__layout-img" />
+                                        <p className="credit__layout-title">토스프라임</p>
+                                        <p className="credit__layout-desc">
+                                            매일 토스와 함께 하신다면 가입해보세요.<br />
+                                            가입비 월 5,900원으로 토스 간편결제 시 최대 4% 적립, 토스증권 국내주식 거래액 1억원까지 수수료 캐시백 혜택을 누려보세요.<br />
+                                            (20만원까지 4%, 20~60만원까지 1% 구간 별 적립)
+                                        </p>
+                                    </div>
+                                    <div className="credit__layout-item">
+                                        <img src="/imgs/main/finance_service_img_4.png" alt="credit image 4" className="credit__layout-img" />
+                                        <p className="credit__layout-title">ATM 현금 찾기</p>
+                                        <p className="credit__layout-desc">
+                                            카드 없이 휴대전화만 챙겨 나와도 됩니다.<br />
+                                            토스앱만 있다면 근처 ATM에서 현금을 찾을 수 있어요.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Section - 사업도 토스와 함께 */}
                 <section className="main-sec business">
                     <div className="business__img-wrap">
                         <img src="/imgs/main/business_img_1.jpg" />
