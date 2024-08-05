@@ -71,7 +71,9 @@ function Footer() {
                                 let strongIdx = [4, 5, 6, 8];
                                 let strong = strongIdx.includes(idx) ? 'strong' : '';
                                 let el = (
-                                    <li key={idx} className={"terms-info__item " + strong}><a href="#">{term}</a></li>
+                                    <li key={idx} className={"terms-info__item " + strong}>
+                                        <a href="#">{term}</a>
+                                    </li>
                                 )
                                 return el;
                             })}

@@ -145,11 +145,11 @@ function App() {
                             <p className="intro__text">금융의 모든 것 <br /> 토스에서 쉽고 간편하게</p>
                             <div className="intro__btn-wrap">
                                 <a href="#" className="intro__app-btn">
-                                    <img src="https://static.toss.im/png-icons/timeline/applekorea.png" height="24" width="24" />
+                                    <img src="https://static.toss.im/png-icons/timeline/applekorea.png" alt="" height="24" width="24" />
                                     <span className="poppins">App Store</span>
                                 </a>
                                 <a href="#" className="intro__app-btn">
-                                    <img src="https://static.toss.im/png-icons/timeline/googleplay.png" height="24" width="24" />
+                                    <img src="https://static.toss.im/png-icons/timeline/googleplay.png" alt="" height="24" width="24" />
                                     <span className="poppins">Google Play</span>
                                 </a>
                             </div>
@@ -191,7 +191,7 @@ function App() {
                 <section className="main-sec consumption">
                     <div className="inner">
                         <div className="main-sec__wrap">
-                            <h1 className="main-sec__title elem_animate up">홈·소비</h1>
+                            <h1 className="main-sec__title elem_animate up">⚽ 홈·소비</h1>
                             <p className="main-sec__desc elem_animate up">
                                 내 돈 관리,<br />
                                 지출부터 일정까지<br />
@@ -199,13 +199,13 @@ function App() {
                             </p>
                             <div className="consumption__img-wrap">
                                 <div className="consumption__img-item first elem_animate up">
-                                    <img src="/imgs/main/consumption_img_2.png" className="consumption__img-img" />
-                                    <img src="/imgs/main/consumption_img_bg.png" className="consumption__img-bg" />
+                                    <img src="/imgs/main/consumption_img_2.png" alt="" className="consumption__img-img" />
+                                    <img src="/imgs/main/consumption_img_bg.png" alt="" className="consumption__img-bg" />
                                 </div>
 
                                 <div className="consumption__img-item second elem_animate up">
-                                    <img src="/imgs/main/consumption_img_1.png" className="consumption__img-img" />
-                                    <img src="/imgs/main/consumption_img_bg.png" className="consumption__img-bg" />
+                                    <img src="/imgs/main/consumption_img_1.png" alt="" className="consumption__img-img" />
+                                    <img src="/imgs/main/consumption_img_bg.png" alt="" className="consumption__img-bg" />
                                 </div>
                             </div>
                             <p className="consumption__desc main-sec__small-desc elem_animate up">
@@ -244,7 +244,7 @@ function App() {
                                             </p>
                                         </div>
                                         <div className="transfer__item-right elem_animate up">
-                                            <img src="/imgs/main/transfer_img_1.png"></img>
+                                            <img src="/imgs/main/transfer_img_1.png" alt="" />
                                         </div>
                                     </li>
                                     <li className="transfer__item">
@@ -263,7 +263,7 @@ function App() {
                                             </p>
                                         </div>
                                         <div className="transfer__item-right elem_animate up">
-                                            <img src="/imgs/main/transfer_img_2.png"></img>
+                                            <img src="/imgs/main/transfer_img_2.png" alt="" />
                                         </div>
                                     </li>
                                     <li className="transfer__item">
@@ -281,7 +281,7 @@ function App() {
                                             </p>
                                         </div>
                                         <div className="transfer__item-right elem_animate up">
-                                            <img src="/imgs/main/transfer_img_3.png"></img>
+                                            <img src="/imgs/main/transfer_img_3.png" alt="" />
                                         </div>
                                     </li>
                                 </ul>
@@ -296,7 +296,7 @@ function App() {
                         <div className="main-sec__wrap">
                             <div className="loan__wrap">
                                 <div className="loan__left">
-                                    <h1 className="main-sec__title elem_animate up">대출</h1>
+                                    <h1 className="main-sec__title elem_animate up">⚽대출 - 반응형</h1>
                                     <p className="main-sec__desc elem_animate up">
                                         여러 은행의 조건을<br />
                                         1분 만에<br />
@@ -329,14 +329,14 @@ function App() {
                                             modules={[Autoplay, EffectFade]}
                                         >
                                             <SwiperSlide>
-                                                <img src="/imgs/main/loan_img_1.png" className="loan__img-item" />
+                                                <img src="/imgs/main/loan_img_1.png" alt="" className="loan__img-item" />
                                             </SwiperSlide>
                                             <SwiperSlide>
-                                                <img src="/imgs/main/loan_img_2.png" className="loan__img-item" />
+                                                <img src="/imgs/main/loan_img_2.png" alt="" className="loan__img-item" />
                                             </SwiperSlide>
                                         </Swiper>
 
-                                        <img src="/imgs/main/consumption_img_bg.png" className="loan__img-bg" />
+                                        <img src="/imgs/main/consumption_img_bg.png" alt="" className="loan__img-bg" />
 
                                     </div>
                                 </div>
@@ -358,7 +358,7 @@ function App() {
                             <div className="credit__content-wrap">
                                 <div className="credit__layout elem_animate up">
                                     <div className="credit__layout-item">
-                                        <img src="/imgs/main/credit_img_1.png" alt="credit image 1" className="credit__layout-img" />
+                                        <img src="/imgs/main/credit_img_1.png" alt="credit 1" className="credit__layout-img" />
                                         <p className="credit__layout-title">내 신용점수</p>
                                         <p className="credit__layout-desc">
                                             언제 어디서든, 원할 때 간편하게<br />
@@ -366,7 +366,7 @@ function App() {
                                         </p>
                                     </div>
                                     <div className="credit__layout-item">
-                                        <img src="/imgs/main/credit_img_2.png" alt="credit image 2" className="credit__layout-img" />
+                                        <img src="/imgs/main/credit_img_2.png" alt="credit 2" className="credit__layout-img" />
                                         <p className="credit__layout-title">신용점수 올리기</p>
                                         <p className="credit__layout-desc">
                                             통신비, 일반 납부내역 등의 서류를<br />
@@ -374,7 +374,7 @@ function App() {
                                         </p>
                                     </div>
                                     <div className="credit__layout-item">
-                                        <img src="/imgs/main/credit_img_3.png" alt="credit image 3" className="credit__layout-img" />
+                                        <img src="/imgs/main/credit_img_3.png" alt="credit 3" className="credit__layout-img" />
                                         <p className="credit__layout-title">신용관리 알림</p>
                                         <p className="credit__layout-desc">
                                             신용점수에 변동이 생기면 토스가 알람을 보내드려요.<br />
@@ -382,7 +382,7 @@ function App() {
                                         </p>
                                     </div>
                                     <div className="credit__layout-item">
-                                        <img src="/imgs/main/credit_img_4.png" alt="credit image 4" className="credit__layout-img" />
+                                        <img src="/imgs/main/credit_img_4.png" alt="credit 4" className="credit__layout-img" />
                                         <p className="credit__layout-title">신용관리 팁</p>
                                         <p className="credit__layout-desc">
                                             신용점수 관리가 막막하다면?<br />
@@ -399,7 +399,7 @@ function App() {
                 <section className="main-sec invest" ref={investContainerRef}>
                     <div className="inner">
                         <div className="main-sec__wrap">
-                            <h1 className="main-sec__title">투자</h1>
+                            <h1 className="main-sec__title">⚽투자</h1>
                             <p className="main-sec__desc">
                                 투자,<br />
                                 모두가 할 수 있도록
@@ -407,29 +407,29 @@ function App() {
 
                             <div className="invest__content-wrap">
                                 <div className="invest__img-wrap">
-                                    <img src="/imgs/main/invest_img_1.png" className="invest__img-img" />
-                                    <img src="/imgs/main/consumption_img_bg.png" className="invest__img-bg" />
+                                    <img src="/imgs/main/invest_img_1.png" alt="" className="invest__img-img" />
+                                    <img src="/imgs/main/consumption_img_bg.png" alt="" className="invest__img-bg" />
                                     <div className="invest__img-list">
                                         <div className="invest__img-item" ref={ref => investItemRef.current[0] = ref}>
-                                            <img src="/imgs/main/invest_img_6.png" />
+                                            <img src="/imgs/main/invest_img_6.png" alt="" />
                                         </div>
                                         <div className="invest__img-item" ref={ref => investItemRef.current[1] = ref}>
-                                            <img src="/imgs/main/invest_img_8.png" />
+                                            <img src="/imgs/main/invest_img_8.png" alt="" />
                                         </div>
                                         <div className="invest__img-item" ref={ref => investItemRef.current[2] = ref}>
-                                            <img src="/imgs/main/invest_img_7.png" />
+                                            <img src="/imgs/main/invest_img_7.png" alt="" />
                                         </div>
                                         <div className="invest__img-item show" ref={ref => investItemRef.current[3] = ref}>
-                                            <img src="/imgs/main/invest_img_5.png" />
+                                            <img src="/imgs/main/invest_img_5.png" alt="" />
                                         </div>
                                         <div className="invest__img-item" ref={ref => investItemRef.current[4] = ref}>
-                                            <img src="/imgs/main/invest_img_2.png" />
+                                            <img src="/imgs/main/invest_img_2.png" alt="" />
                                         </div>
                                         <div className="invest__img-item" ref={ref => investItemRef.current[5] = ref}>
-                                            <img src="/imgs/main/invest_img_4.png" />
+                                            <img src="/imgs/main/invest_img_4.png" alt="" />
                                         </div>
                                         <div className="invest__img-item" ref={ref => investItemRef.current[6] = ref}>
-                                            <img src="/imgs/main/invest_img_3.png" />
+                                            <img src="/imgs/main/invest_img_3.png" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -551,7 +551,7 @@ function App() {
                             <div className="credit__content-wrap">
                                 <div className="credit__layout elem_animate up">
                                     <div className="credit__layout-item">
-                                        <img src="/imgs/main/finance_service_img_1.png" alt="credit image 1" className="credit__layout-img" />
+                                        <img src="/imgs/main/finance_service_img_1.png" alt="finance service 1" className="credit__layout-img" />
                                         <p className="credit__layout-title">숨은 정부지원금 찾기</p>
                                         <p className="credit__layout-desc">
                                             생각지도 못한 지원금이 기다리고 있어요.<br />
@@ -560,7 +560,7 @@ function App() {
                                         </p>
                                     </div>
                                     <div className="credit__layout-item">
-                                        <img src="/imgs/main/finance_service_img_2.png" alt="credit image 2" className="credit__layout-img" />
+                                        <img src="/imgs/main/finance_service_img_2.png" alt="finance service 2" className="credit__layout-img" />
                                         <p className="credit__layout-title">카드 혜택 추천</p>
                                         <p className="credit__layout-desc">
                                             이제, 카드를 내 생활패턴에 맞게.<br />
@@ -568,7 +568,7 @@ function App() {
                                         </p>
                                     </div>
                                     <div className="credit__layout-item">
-                                        <img src="/imgs/main/finance_service_img_3.png" alt="credit image 3" className="credit__layout-img" />
+                                        <img src="/imgs/main/finance_service_img_3.png" alt="finance service 3" className="credit__layout-img" />
                                         <p className="credit__layout-title">토스프라임</p>
                                         <p className="credit__layout-desc">
                                             매일 토스와 함께 하신다면 가입해보세요.<br />
@@ -577,7 +577,7 @@ function App() {
                                         </p>
                                     </div>
                                     <div className="credit__layout-item">
-                                        <img src="/imgs/main/finance_service_img_4.png" alt="credit image 4" className="credit__layout-img" />
+                                        <img src="/imgs/main/finance_service_img_4.png" alt="finance service 4" className="credit__layout-img" />
                                         <p className="credit__layout-title">ATM 현금 찾기</p>
                                         <p className="credit__layout-desc">
                                             카드 없이 휴대전화만 챙겨 나와도 됩니다.<br />
@@ -593,7 +593,7 @@ function App() {
                 {/* Section - 사업도 토스와 함께 */}
                 <section className="main-sec business">
                     <div className="business__img-wrap">
-                        <img src="/imgs/main/business_img_1.jpg" />
+                        <img src="/imgs/main/business_img_1.jpg" alt="" />
                     </div>
                     <div className="business__desc">
                         <h4 className="business__desc__title">사업도 토스와 함께</h4>
