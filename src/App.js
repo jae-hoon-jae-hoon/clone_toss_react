@@ -17,14 +17,38 @@ import Footer from "./common/Footer.js";
 
 function App() {
 
-    // 대출 이미지 슬라이드
-    useLayoutEffect(() => {
-
-    }, [])
-
     // GSAP - ScrollTrigger
-    // 투자 아이콘
     gsap.registerPlugin(ScrollTrigger);
+
+    // 홈·소비 이미지 
+    const consumptionContainerRef = useRef(null);
+    const consumptionContainer = consumptionContainerRef.current;
+    useLayoutEffect(() => {
+        let mm = gsap.matchMedia()
+        mm.add("(min-width:1025px)", (context) => {
+            gsap.to(consumptionContainer, {
+                x: 0,
+            });
+        })
+        mm.add("(max-width:1024px)", (context) => {
+            // gsap.from(consumptionContainer, {
+            //     x: 0
+            // })
+            gsap.to(consumptionContainer, {
+                x: -200,
+                scrollTrigger: {
+                    trigger: consumptionContainer,
+                    start: "10% center",
+                    end: "80% center",
+                    scrub: 1,
+                    // markers: true,
+                }
+            });
+        })
+        window.addEventListener("resize", ScrollTrigger.update);
+    })
+
+    // 투자 아이콘
     const investContainerRef = useRef(null);
     const investItemRef = useRef([]);
     const investContainer = investContainerRef.current;
@@ -35,7 +59,7 @@ function App() {
                 scrollTrigger: {
                     target: investItem,
                     trigger: investContainer,
-                    start: "25% 20%", // 컨테이너위치 윈도우스크롤위치
+                    start: "25% center", // 컨테이너위치 윈도우스크롤위치
                     end: "80% 90%",
                     scrub: 1,
                     // markers: true,
@@ -53,7 +77,9 @@ function App() {
             tl.to(investItem[6], { opacity: 1 }, "act3")
         })
 
-        return () => context.revert()
+        return () => {
+            context.revert()
+        }
     })
 
     // 금융 배경 애니메이션
@@ -67,7 +93,7 @@ function App() {
                 scrollTrigger: {
                     target: financeItem,
                     trigger: financeContainer,
-                    start: "25% bottom", // 컨테이너위치 윈도우스크롤위치
+                    start: "40% bottom", // 컨테이너위치 윈도우스크롤위치
                     end: "15% start",
                     scrub: true,
                     // markers: true,
@@ -191,13 +217,13 @@ function App() {
                 <section className="main-sec consumption">
                     <div className="inner">
                         <div className="main-sec__wrap">
-                            <h1 className="main-sec__title elem_animate up">⚽ 홈·소비</h1>
+                            <h1 className="main-sec__title elem_animate up">홈·소비</h1>
                             <p className="main-sec__desc elem_animate up">
                                 내 돈 관리,<br />
                                 지출부터 일정까지<br />
                                 똑똑하게
                             </p>
-                            <div className="consumption__img-wrap">
+                            <div className="consumption__img-wrap" ref={consumptionContainerRef}>
                                 <div className="consumption__img-item first elem_animate up">
                                     <img src="/imgs/main/consumption_img_2.png" alt="" className="consumption__img-img" />
                                     <img src="/imgs/main/consumption_img_bg.png" alt="" className="consumption__img-bg" />
@@ -295,31 +321,48 @@ function App() {
                     <div className="inner">
                         <div className="main-sec__wrap">
                             <div className="loan__wrap">
-                                <div className="loan__left">
-                                    <h1 className="main-sec__title elem_animate up">⚽대출 - 반응형</h1>
-                                    <p className="main-sec__desc elem_animate up">
-                                        여러 은행의 조건을<br />
-                                        1분 만에<br />
-                                        확인해보세요
-                                    </p>
+                                <h1 className="main-sec__title elem_animate up">대출</h1>
+                                <p className="main-sec__desc elem_animate up">
+                                    여러 은행의 조건을<br />
+                                    1분 만에<br />
+                                    확인해보세요
+                                </p>
 
-                                    <div className="loan__desc-wrap">
-                                        <div className="loan__desc-bold ">
-                                            <p className="elem_animate up">한도는 높게,</p>
-                                            <p className="elem_animate up">금리는 <span className="gray">낮게,</span></p>
-                                            <p className="elem_animate up">부담은 <span className="lightgray">적게.</span></p>
-                                        </div>
-                                        <div className="loan__desc-small">
-                                            앉은 자리에서 여러 은행의 한도와 금리를 비교하고<br />
-                                            내게 꼭 맞는 대출을 찾아보세요.<br />
-                                            신용, 비상금, 대환, 주택담보대출 모두 가능해요.
-                                        </div>
+                                <div id="loan-img-slide" className="loan__img-wrap">
+                                    <Swiper
+                                        effect={'fade'}
+                                        autoplay={{
+                                            delay: 3000,
+                                            disableOnInteraction: false,
+                                        }}
+                                        modules={[Autoplay, EffectFade]}
+                                    >
+                                        <SwiperSlide>
+                                            <img src="/imgs/main/loan_img_1.png" alt="" className="loan__img-item" />
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <img src="/imgs/main/loan_img_2.png" alt="" className="loan__img-item" />
+                                        </SwiperSlide>
+                                    </Swiper>
+
+                                    <img src="/imgs/main/consumption_img_bg.png" alt="" className="loan__img-bg" />
+                                </div>
+
+                                <div className="loan__desc-wrap">
+                                    <div className="loan__desc-bold ">
+                                        <p className="elem_animate up">한도는 높게,</p>
+                                        <p className="elem_animate up">금리는 <span className="gray">낮게,</span></p>
+                                        <p className="elem_animate up">부담은 <span className="lightgray">적게.</span></p>
+                                    </div>
+                                    <div className="loan__desc-small">
+                                        앉은 자리에서 여러 은행의 한도와 금리를 비교하고<br />
+                                        내게 꼭 맞는 대출을 찾아보세요.<br />
+                                        신용, 비상금, 대환, 주택담보대출 모두 가능해요.
                                     </div>
                                 </div>
 
-                                <div className="loan__right">
+                                {/* <div className="loan__right">
                                     <div id="loan-img-slide" className="loan__img-wrap">
-                                        {/* swiper 사용해서 fade 효과 적용하기 */}
                                         <Swiper
                                             effect={'fade'}
                                             autoplay={{
@@ -337,9 +380,8 @@ function App() {
                                         </Swiper>
 
                                         <img src="/imgs/main/consumption_img_bg.png" alt="" className="loan__img-bg" />
-
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -399,13 +441,26 @@ function App() {
                 <section className="main-sec invest" ref={investContainerRef}>
                     <div className="inner">
                         <div className="main-sec__wrap">
-                            <h1 className="main-sec__title">⚽투자</h1>
+                            <h1 className="main-sec__title">투자</h1>
                             <p className="main-sec__desc">
                                 투자,<br />
                                 모두가 할 수 있도록
                             </p>
 
                             <div className="invest__content-wrap">
+                                <div className="invest__desc-wrap">
+                                    <p className="main-sec__small-desc">
+                                        이해하기 쉬운 용어, <br className="hide_1024" />
+                                        설명이 필요 없는 <br className="hide_1024" />
+                                        직관적인 화면 구성,
+                                    </p>
+                                    <p className="main-sec__small-desc">
+                                        송금처럼 쉬운 구매 경험 <br className="hide_1024" />
+                                        그리고 투자 판단에 <br className="hide_1024" />
+                                        도움을 주는 콘텐츠까지
+                                    </p>
+                                </div>
+
                                 <div className="invest__img-wrap">
                                     <img src="/imgs/main/invest_img_1.png" alt="" className="invest__img-img" />
                                     <img src="/imgs/main/consumption_img_bg.png" alt="" className="invest__img-bg" />
@@ -432,19 +487,6 @@ function App() {
                                             <img src="/imgs/main/invest_img_3.png" alt="" />
                                         </div>
                                     </div>
-                                </div>
-
-                                <div className="invest__desc-wrap">
-                                    <p className="main-sec__small-desc">
-                                        이해하기 쉬운 용어<br />
-                                        설명이 필요 없는<br />
-                                        직관적인 화면 구성
-                                    </p>
-                                    <p className="main-sec__small-desc">
-                                        송금처럼 쉬운 구매 경험<br />
-                                        그리고 투자 판단에<br />
-                                        도움을 주는 콘텐츠까지
-                                    </p>
                                 </div>
                             </div>
 

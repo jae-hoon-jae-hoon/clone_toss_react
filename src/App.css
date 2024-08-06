@@ -80,6 +80,12 @@ a:active {
   opacity: 1;
 }
 
+@media screen and (max-width:1024px) {
+  .hide_1024 {
+    display: none !important;
+  }
+}
+
 @media screen and (max-width:640px) {
   .inner {
     padding: 0 20px;
@@ -474,8 +480,9 @@ a:active {
 }
 
 .main-sec__small-desc {
-  font-size: 23px;
   font-weight: 600;
+  font-size: 23px;
+  color: #333d4b;
   line-height: 1.5;
 }
 
@@ -701,19 +708,18 @@ a:active {
   }
 
   .consumption__img-wrap {
+    display: flex;
+    width: max-content;
     height: auto;
   }
 
-  .consumption__img-item.first {
-    position: relative;
-    top: 0;
-    left: 0;
-  }
-
+  .consumption__img-item.first,
   .consumption__img-item.second {
     position: relative;
     top: 0;
     left: 0;
+    width: 400px;
+    height: 625px;
   }
 
   .consumption__desc {
@@ -823,11 +829,33 @@ a:active {
 }
 
 .loan__wrap {
-  display: flex;
+  position: relative;
 }
 
-.loan__left {
-  width: 50%;
+.loan__img-wrap {
+  width: 600px;
+  position: absolute;
+  top: 50%;
+  right: -100px;
+  transform: translateY(-50%)
+}
+
+.loan__img-wrap .swiper {
+  position: absolute;
+  width: 57%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loan__img-bg {
+  position: relative;
+  width: 100%;
+  z-index: 5;
+}
+
+.loan__img-item {
+  max-width: 100%;
 }
 
 .loan__desc-wrap {
@@ -857,37 +885,25 @@ a:active {
   line-height: 1.5;
 }
 
-.loan__right {
-  position: relative;
-  width: 50%;
-}
 
-.loan__img-wrap {
-  height: 100%;
-}
 
-.loan__img-wrap .swiper {
-  position: absolute;
-  width: 57%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.loan__img-bg {
-  position: absolute;
-  width: 100%;
-  z-index: 2;
-}
-
-.loan__img-item {
-  max-width: 100%;
-}
 @media screen and (max-width:1024px) {
-  .loan__desc-bold{
+  .loan__img-wrap {
+    position: static;
+    width: 400px;
+    margin: 0 auto;
+    transform: translateY(0);
+  }
+
+  .loan__desc-wrap {
+    margin-top: 0px;
+  }
+
+  .loan__desc-bold {
     font-size: 38px;
   }
-  .loan__desc-small{
+
+  .loan__desc-small {
     font-size: 19px;
   }
 }
@@ -1041,6 +1057,15 @@ a:active {
 @media screen and (max-width:1024px) {
   .main-sec.invest {
     padding: 200px 0;
+  }
+
+  .invest__desc-wrap {
+    position: static;
+    display: block;
+    padding-left: 0;
+    margin-top: 20px;
+    translate: 0;
+
   }
 }
 
