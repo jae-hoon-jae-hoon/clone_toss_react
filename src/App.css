@@ -80,6 +80,10 @@ a:active {
   opacity: 1;
 }
 
+.hide {
+  display: none !important;
+}
+
 @media screen and (max-width:1024px) {
   .hide_1024 {
     display: none !important;
@@ -89,6 +93,10 @@ a:active {
 @media screen and (max-width:640px) {
   .inner {
     padding: 0 20px;
+  }
+
+  .show_640 {
+    display: block !important;
   }
 }
 
@@ -111,6 +119,58 @@ a:active {
   border-bottom-color: #e5e5e5;
   background-color: #fff;
   /* color: #4e5968; */
+}
+
+.logo {
+  flex-shrink: 0;
+}
+
+.logo__link {
+  display: inline-block;
+}
+
+.logo__link img {
+  height: 60px;
+  width: 100%;
+}
+
+.gnb li {
+  padding: 0 8px
+}
+
+.gnb li a {
+  display: inline-block;
+  padding: 12px 10px;
+  font-size: 15px;
+}
+
+.lang li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 60px;
+}
+
+.lang li:first-child::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -1px;
+  width: 2px;
+  height: 100%;
+  background-color: #eee;
+  transform: translateY(-50%);
+}
+
+.lang li a {
+  color: #999;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.lang li.active a {
+  color: #000;
 }
 
 .header__right {
@@ -224,6 +284,12 @@ a:active {
 
   .gnb-mobile__lang li a:hover {
     background-color: rgba(2, 32, 71, .05);
+  }
+}
+
+@media screen and (max-width:640px) {
+  .logo__link img {
+    margin-left: -15px;
   }
 }
 
@@ -365,59 +431,6 @@ a:active {
   max-width: 100%;
 }
 
-
-.logo {
-  flex-shrink: 0;
-}
-
-.logo__link {
-  display: inline-block;
-}
-
-.logo__link img {
-  height: 60px;
-  width: 100%;
-}
-
-.gnb li {
-  padding: 0 8px
-}
-
-.gnb li a {
-  display: inline-block;
-  padding: 12px 10px;
-  font-size: 15px;
-}
-
-.lang li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 60px;
-}
-
-.lang li:first-child::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: -1px;
-  width: 2px;
-  height: 100%;
-  background-color: #eee;
-  transform: translateY(-50%);
-}
-
-.lang li a {
-  color: #999;
-  font-weight: 300;
-  font-size: 15px;
-}
-
-.lang li.active a {
-  color: #000;
-}
-
 @media screen and (max-width:1024px) {
   .f-gnb__list {
     flex-direction: column;
@@ -431,6 +444,24 @@ a:active {
     grid-template-columns: repeat(1, auto);
     row-gap: 6px;
     column-gap: 0;
+  }
+}
+
+@media screen and (max-width:640px) {
+  .footer {
+    padding: 60px 0 80px;
+  }
+
+  .footer .inner {
+    padding: 0 40px;
+  }
+
+  .f-gnb__dep1 {
+    font-size: 14px;
+  }
+
+  .f-gnb__sub-item a {
+    font-size: 14px;
   }
 }
 
@@ -510,15 +541,19 @@ a:active {
   }
 
   .main-sec__title {
-    font-size: 26px;
+    font-size: 22px;
   }
 
   .main-sec__desc {
-    font-size: 46px;
+    font-size: 28px;
   }
 
   .main-sec__small-desc {
-    font-size: 22px;
+    font-size: 18px;
+  }
+
+  .main-sec__wrap {
+    padding: 0;
   }
 }
 
@@ -626,6 +661,18 @@ a:active {
   }
 }
 
+@media screen and (max-width:640px) {
+  .intro__text {
+    font-size: 28px;
+  }
+
+  .intro__btn-wrap {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px 0;
+  }
+}
+
 /* Desc */
 .main-sec.desc {
   height: auto;
@@ -644,6 +691,16 @@ a:active {
 @media screen and (max-width:1024px) {
   .desc p {
     font-size: 26px;
+  }
+}
+
+@media screen and (max-width:640px) {
+  .main-sec.desc {
+    padding: 100px 0;
+  }
+
+  .desc p {
+    font-size: 20px;
   }
 }
 
@@ -727,6 +784,18 @@ a:active {
   }
 }
 
+@media screen and (max-width: 640px) {
+  .main-sec.consumption {
+    padding: 100px 0;
+  }
+
+  .consumption__img-item.first,
+  .consumption__img-item.second {
+    width: 300px;
+    height: 477px;
+  }
+
+}
 
 /* 송금 */
 .main-sec.transfer {
@@ -809,7 +878,7 @@ a:active {
 
   .transfer__item-right {
     width: 100%;
-    max-width: 640px;
+    max-width: 550px;
     margin: 0 auto;
   }
 
@@ -819,6 +888,24 @@ a:active {
 
   .transfer__item:nth-child(2n) .transfer__item-right {
     order: 2
+  }
+}
+
+@media screen and (max-width:640px) {
+  .transfer__item {
+    margin-bottom: 50px;
+  }
+
+  .transfer__item-title {
+    font-size: 18px;
+  }
+
+  .transfer__item-desc--bold {
+    font-size: 24px;
+  }
+
+  .transfer__item-desc {
+    font-size: 16px;
   }
 }
 
@@ -885,12 +972,10 @@ a:active {
   line-height: 1.5;
 }
 
-
-
 @media screen and (max-width:1024px) {
   .loan__img-wrap {
     position: static;
-    width: 400px;
+    width: 450px;
     margin: 0 auto;
     transform: translateY(0);
   }
@@ -905,6 +990,28 @@ a:active {
 
   .loan__desc-small {
     font-size: 19px;
+  }
+}
+
+@media screen and (max-width:640px) {
+  .loan__desc-wrap {
+    margin-top: 0px;
+  }
+
+  .loan__desc-bold {
+    font-size: 28px;
+  }
+
+  .loan__desc-small {
+    font-size: 16px;
+    letter-spacing: -0.5px;
+  }
+}
+
+@media screen and (max-width:480px) {
+  .loan__img-wrap {
+    width: 100vw;
+    margin-left: -20px;
   }
 }
 
@@ -979,6 +1086,33 @@ a:active {
   }
 }
 
+@media screen and (max-width:640px) {
+  .main-sec.credit {
+    padding: 100px 0;
+  }
+
+  .credit__content-wrap {
+    margin-top: 50px;
+  }
+
+  .credit__layout-item {
+    margin-bottom: 50px;
+  }
+
+  .credit__layout-img {
+    width: 80px;
+    margin-bottom: 20px;
+  }
+
+  .credit__layout-title {
+    font-size: 22px;
+  }
+
+  .credit__layout-desc {
+    font-size: 15px;
+  }
+}
+
 
 /* 투자 */
 .main-sec.invest {
@@ -1029,7 +1163,7 @@ a:active {
 .invest__img-item {
   width: 178px;
   height: 178px;
-  opacity: 0;
+  opacity: 1;
 }
 
 .invest__img-item.show {
@@ -1054,6 +1188,16 @@ a:active {
   z-index: 3;
 }
 
+@media screen and (max-width:1440px) {
+
+  /* .invest__img-item {
+    opacity: 1;
+  } */
+  .invest__img-list {
+    left: 25%;
+  }
+}
+
 @media screen and (max-width:1024px) {
   .main-sec.invest {
     padding: 200px 0;
@@ -1065,7 +1209,44 @@ a:active {
     padding-left: 0;
     margin-top: 20px;
     translate: 0;
+  }
 
+  .invest__img-wrap {
+    width: 500px;
+    height: 770px;
+  }
+
+  .invest__img-list {
+    bottom: 100px;
+  }
+
+  .invest__img-item {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media screen and (max-width:640px) {
+  .main-sec.invest {
+    padding: 100px 0;
+  }
+}
+
+@media screen and (max-width:480px) {
+  .invest__img-wrap {
+    width: 100vw;
+    height: auto;
+    margin-left: -20px;
+  }
+
+  .invest__img-list {
+    width: 200vw;
+    bottom: 15%;
+  }
+
+  .invest__img-item {
+    width: auto;
+    height: auto;
   }
 }
 
@@ -1106,6 +1287,16 @@ a:active {
 @media screen and (max-width:1024px) {
   .finance-text {
     font-size: 66px;
+  }
+}
+
+@media screen and (max-width:640px) {
+  .main-sec.finance {
+    height: 665px;
+  }
+
+  .finance-text {
+    font-size: 50px;
   }
 }
 
@@ -1237,6 +1428,39 @@ a:active {
   }
 }
 
+@media screen and (max-width:640px) {
+  .fit .main-sec__desc {
+    font-size: 32px;
+    margin-bottom: 60px;
+  }
+
+  .fit-section .img {
+    margin-bottom: 30px;
+  }
+
+  .fit-section__title {
+    font-size: 24px;
+  }
+
+  .fit-section__desc {
+    font-size: 16px;
+    letter-spacing: -0.5px;
+  }
+
+  .fit-section:not(:last-child) {
+    margin-bottom: 100px;
+  }
+
+  .fit-section:nth-child(2) .img {
+    margin-bottom: 20px;
+  }
+
+  .fit-section:nth-child(2) .fit-section__item:last-child {
+    max-width: 240px;
+  }
+}
+
+
 
 /* 알면 좋은 금융 */
 .main-sec.finance-service {
@@ -1256,6 +1480,16 @@ a:active {
   font-size: 17px;
   color: #8b95a1;
   line-height: 1.6;
+}
+
+@media screen and (max-width:640px) {
+  .finance-service .credit__layout-title {
+    font-size: 18px;
+  }
+
+  .finance-service .credit__layout-desc {
+    font-size: 16px;
+  }
 }
 
 
@@ -1396,5 +1630,40 @@ a:active {
   .business__link-desc {
     margin-bottom: 25px;
     letter-spacing: 0
+  }
+}
+
+@media screen and (max-width:640px) {
+  .main-sec.business {
+    padding: 100px 0;
+  }
+
+  .business__desc__title {
+    font-size: 34px;
+  }
+
+  .business__desc__small {
+    font-size: 18px;
+  }
+
+  .business__link-wrap {
+    padding: 0 20px;
+  }
+
+  .business__desc {
+    margin-bottom: 100px;
+  }
+
+  .business__link-item {
+    margin-bottom: 60px;
+  }
+
+  .business__link-title {
+    font-size: 22px;
+  }
+
+  .business__link-desc {
+    font-size: 16px;
+    margin-bottom: 20px;
   }
 }

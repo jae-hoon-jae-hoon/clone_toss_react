@@ -19,11 +19,14 @@ function App() {
 
     // GSAP - ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
+    window.addEventListener("resize", ScrollTrigger.update);
+
 
     // 홈·소비 이미지 
     const consumptionContainerRef = useRef(null);
-    const consumptionContainer = consumptionContainerRef.current;
     useLayoutEffect(() => {
+        const consumptionContainer = consumptionContainerRef.current;
+
         let mm = gsap.matchMedia()
         mm.add("(min-width:1025px)", (context) => {
             gsap.to(consumptionContainer, {
@@ -31,11 +34,8 @@ function App() {
             });
         })
         mm.add("(max-width:1024px)", (context) => {
-            // gsap.from(consumptionContainer, {
-            //     x: 0
-            // })
             gsap.to(consumptionContainer, {
-                x: -200,
+                x: -300,
                 scrollTrigger: {
                     trigger: consumptionContainer,
                     start: "10% center",
@@ -45,49 +45,79 @@ function App() {
                 }
             });
         })
-        window.addEventListener("resize", ScrollTrigger.update);
+        mm.add("(max-width:640px)", (context) => {
+            gsap.to(consumptionContainer, {
+                x: -300,
+                scrollTrigger: {
+                    trigger: consumptionContainer,
+                    start: "top center",
+                    end: "70% center",
+                    scrub: 1,
+                    // markers: true,
+                }
+            });
+        })
+        // window.addEventListener("resize", ScrollTrigger.update);
     })
 
     // 투자 아이콘
     const investContainerRef = useRef(null);
+    const investItemListRef = useRef(null);
     const investItemRef = useRef([]);
-    const investContainer = investContainerRef.current;
-    const investItem = investItemRef.current;
+
     useLayoutEffect(() => {
-        const context = gsap.context(() => {
+        const investContainer = investContainerRef.current;
+        const investItemList = investItemListRef.current;
+        const investItem = investItemRef.current;
+
+        let mm2 = gsap.matchMedia()
+        mm2.add("(min-width:1441px)", (context) => {
+            gsap.set(investItemList, { xPercent: -50, opacity: 1 })
+
             const tl = gsap.timeline({
                 scrollTrigger: {
                     target: investItem,
                     trigger: investContainer,
-                    start: "25% center", // 컨테이너위치 윈도우스크롤위치
+                    start: "40% center", // 컨테이너위치 윈도우스크롤위치
                     end: "80% 90%",
+                    scrub: true,
+                    // markers: true,
+                }
+            })
+            tl.from(investItem[2], { opacity: 0 }, "act-1")
+            tl.from(investItem[4], { opacity: 0 }, "act-1")
+            tl.from(investItem[1], { opacity: 0 }, "act-2")
+            tl.from(investItem[5], { opacity: 0 }, "act-2")
+            tl.from(investItem[0], { opacity: 0 }, "act-3")
+            tl.from(investItem[6], { opacity: 0 }, "act-3")
+        })
+
+        mm2.add("(max-width:1440px)", (context) => {
+            gsap.set(investItemList, { xPercent: -0 })
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    target: investItemList,
+                    trigger: investContainer,
+                    start: "center 40%", // 컨테이너위치 윈도우스크롤위치
+                    end: "80% center",
                     scrub: 1,
                     // markers: true,
                 }
             })
-            tl.to(investItem[3], { opacity: 1 }, "act")
-            tl.to(investItem[3], { opacity: 1 }, "act0")
-            tl.to(investItem[2], { opacity: 1 }, "act1")
-            tl.to(investItem[4], { opacity: 1 }, "act1")
-            tl.to(investItem[1], { opacity: 1 }, "act2")
-            tl.to(investItem[5], { opacity: 1 }, "act2")
-            tl.to(investItem[0], { opacity: 0.4, delay: 0.1 }, "act2")
-            tl.to(investItem[6], { opacity: 0.4, delay: 0.1 }, "act2")
-            tl.to(investItem[0], { opacity: 1 }, "act3")
-            tl.to(investItem[6], { opacity: 1 }, "act3")
+            tl.to(investItemList, { xPercent: -70 })
         })
 
-        return () => {
-            context.revert()
-        }
+        // window.addEventListener("resize", ScrollTrigger.update);
     })
 
     // 금융 배경 애니메이션
     const financeContainerRef = useRef(null);
     const financeItemRef = useRef([]);
-    const financeContainer = financeContainerRef.current;
-    const financeItem = financeItemRef.current;
     useLayoutEffect(() => {
+        const financeContainer = financeContainerRef.current;
+        const financeItem = financeItemRef.current;
+
         const context = gsap.context(() => {
             const tl = gsap.timeline({
                 scrollTrigger: {
@@ -464,7 +494,7 @@ function App() {
                                 <div className="invest__img-wrap">
                                     <img src="/imgs/main/invest_img_1.png" alt="" className="invest__img-img" />
                                     <img src="/imgs/main/consumption_img_bg.png" alt="" className="invest__img-bg" />
-                                    <div className="invest__img-list">
+                                    <div className="invest__img-list" ref={investItemListRef}>
                                         <div className="invest__img-item" ref={ref => investItemRef.current[0] = ref}>
                                             <img src="/imgs/main/invest_img_6.png" alt="" />
                                         </div>
@@ -502,7 +532,7 @@ function App() {
                 <section className="main-sec finance" ref={financeContainerRef}>
                     <div className="inner">
                         <div className="main-sec__wrap">
-                            <div className="finance-text">꼭 필요했던 금융</div>
+                            <div className="finance-text">꼭 필요했던<br className="hide show_640" /> 금융</div>
                         </div>
                     </div>
 
@@ -510,7 +540,7 @@ function App() {
                     <div className="animation-bg right" ref={ref => financeItemRef.current[1] = ref}></div>
                 </section>
 
-                {/* Section - ⚽토스로 나에게 딱 맞게 */}
+                {/* Section - 토스로 나에게 딱 맞게 */}
                 <section className="main-sec fit">
                     <div className="inner">
                         <div className="main-sec__wrap">
@@ -525,7 +555,7 @@ function App() {
                                             <img src="/imgs/main/fit_img_1.jpg" alt="" className="img" />
                                         </div>
                                         <div className="fit-section__title">
-                                            내 문서함 <span className="gray">공공문서 확인부터 납부까지 한 번에</span>
+                                            내 문서함 <span className="gray">공공문서 확인부터<br className="hide show_640" /> 납부까지 한 번에</span>
                                         </div>
                                         <div className="fit-section__desc">
                                             건강검진, 국가장학금 신청, 교통범칙금·과태료 납부.<br />

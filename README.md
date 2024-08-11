@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# 토스 메인페이지 클론코딩
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- 리액트를 이용해서 토스 메인페이지를 클론코딩 하였습니다.
+  ![page1](./ReadmeImages/page1.PNG)
+  ![page2](./ReadmeImages/page2.PNG)
+  ![page3](./ReadmeImages/page3.PNG)
 
-## Available Scripts
+## HTML
 
-In the project directory, you can run:
+index.html
+[코드보기](./index.html)
 
-### `npm start`
+### - head태그
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 파비콘설정, 구글폰트사용, css파일들을 불러오는 코드를 작성했습니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### - body태그
 
-### `npm test`
+1. 메뉴를 보여주는 header태그섹션
+1. 홈페이지 설명글과 회원가입창을 보여주는 VISUAL섹션
+1. 홈페이지에 대한 동영상과 세부적인 설명을 나눠서 보여주는 FEATURE섹션
+1. 회사위치를 구글맵을 통해 위치를 알려주는 WHERE IS섹션
+1. 홈페이지에 대한 광고와 함께 회원가입을 권장하는 PRICING CARD섹션
+1. 마지막으로 가장 밑부분은
+   홈페이지에 대한 여러 링크를 보여주는 FOOTER섹션
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## CSS
 
-### `npm run build`
+화면크기에 따라<br>
+1024px보다 클 경우 main.css [코드보기](./css/main.css)<br>
+1024px이하일 경우 main_medium.css
+[코드보기](./css/main_medium.css)<br>
+768px이하일 경우 main_small.css
+[코드보기](./css/main_small.css)<br>
+css파일을 적용시켜 반응형웹을 만들었습니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![responsive](./ReadmeImages/responsive.PNG)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Javascript
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. index.html
+   [코드보기](./index.html)<br>
+   body태그 가장 밑쪽 코드에서
+   두 개의 script태그를 사용했습니다. <br>
+   첫번째 script태그는 구글맵을 만들고 구글맵에 대한 설정을 위한 코드입니다.<br>
+   두번째 script태그는 구글맵을 사용하기위해 api key를 설정하는 코드입니다.<br>
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. main.js
+   [코드보기](./main.js)<br>
+   토글버튼의 작동 코드와
+   화면의 크기가 리사이즈될 때 토글on/off에 대한 설정코드를 작성했습니다.
