@@ -13,9 +13,11 @@ function Header(props) {
     useEffect(() => {
         handleResize();
 
-        window.addEventListener("resize", debounceResize);
+        window.addEventListener("resize", handleResize);
+
+        // 컴포넌트가 언마운트되거나 리렌더링될 때 불필요한 이벤트 리스너를 제거
         return () => {
-            window.removeEventListener("resize", debounceResize)
+            window.removeEventListener("resize", handleResize)
         };
 
     }, [])
@@ -25,23 +27,12 @@ function Header(props) {
     const handleResize = () => {
         if (window.innerWidth > 1024) {
             setIsMobile(false)
-            setMobileGnbOpen(false)
         } else {
             setIsMobile(true)
         }
     }
-    const debounceFunction = (cb, delay) => {
-        let timer;
-        return () => {
-            if (timer) clearTimeout(timer);
-            timer = setTimeout(() => cb(), delay);
-        };
-    };
-    const debounceResize = debounceFunction(handleResize, 500);
     const onClickMobileGnbBtn = (e) => {
         e.preventDefault();
-        console.log(mobileGnbOpen);
-
         setMobileGnbOpen(!mobileGnbOpen)
     }
 
@@ -61,11 +52,6 @@ function Header(props) {
                                 <img src={process.env.PUBLIC_URL + '/imgs/main/toss_logo.png'} alt="toss logo" />
                             </h1>
                         </Link>
-                        {/* <a href="#" className="logo__link">
-                            <h1>
-                                <img src={process.env.PUBLIC_URL + '/imgs/main/toss_logo.png'} />
-                            </h1>
-                        </a> */}
                     </div>
                     <div className="header__right df sb">
                         {!isMobile &&
@@ -106,7 +92,6 @@ function Header(props) {
                                 <button className="mobile-menu-btn" onClick={onClickMobileGnbBtn}>
                                     {!mobileGnbOpen && <span className="material-icons">menu</span>}
                                     {mobileGnbOpen && <span className="material-icons">close</span>}
-
                                 </button>
                             </div>
                         }

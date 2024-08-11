@@ -21,7 +21,6 @@ function App() {
     gsap.registerPlugin(ScrollTrigger);
     window.addEventListener("resize", ScrollTrigger.update);
 
-
     // 홈·소비 이미지 
     const consumptionContainerRef = useRef(null);
     useLayoutEffect(() => {
@@ -41,7 +40,6 @@ function App() {
                     start: "10% center",
                     end: "80% center",
                     scrub: 1,
-                    // markers: true,
                 }
             });
         })
@@ -53,11 +51,9 @@ function App() {
                     start: "top center",
                     end: "70% center",
                     scrub: 1,
-                    // markers: true,
                 }
             });
         })
-        // window.addEventListener("resize", ScrollTrigger.update);
     })
 
     // 투자 아이콘
@@ -72,7 +68,10 @@ function App() {
 
         let mm2 = gsap.matchMedia()
         mm2.add("(min-width:1441px)", (context) => {
-            gsap.set(investItemList, { xPercent: -50, opacity: 1 })
+            gsap.set(investItemList, { xPercent: -50 })
+            investItem.map(item => {
+                gsap.set(item, { opacity: 1 })
+            })
 
             const tl = gsap.timeline({
                 scrollTrigger: {
@@ -81,7 +80,6 @@ function App() {
                     start: "40% center", // 컨테이너위치 윈도우스크롤위치
                     end: "80% 90%",
                     scrub: true,
-                    // markers: true,
                 }
             })
             tl.from(investItem[2], { opacity: 0 }, "act-1")
@@ -94,6 +92,9 @@ function App() {
 
         mm2.add("(max-width:1440px)", (context) => {
             gsap.set(investItemList, { xPercent: -0 })
+            investItem.map(item => {
+                gsap.set(item, { opacity: 1 })
+            })
 
             const tl = gsap.timeline({
                 scrollTrigger: {
@@ -102,13 +103,10 @@ function App() {
                     start: "center 40%", // 컨테이너위치 윈도우스크롤위치
                     end: "80% center",
                     scrub: 1,
-                    // markers: true,
                 }
             })
             tl.to(investItemList, { xPercent: -70 })
         })
-
-        // window.addEventListener("resize", ScrollTrigger.update);
     })
 
     // 금융 배경 애니메이션
@@ -126,7 +124,6 @@ function App() {
                     start: "40% bottom", // 컨테이너위치 윈도우스크롤위치
                     end: "15% start",
                     scrub: true,
-                    // markers: true,
                 }
             })
             tl.to(financeItem[0], { left: "-25%" }, "act")
@@ -139,45 +136,42 @@ function App() {
 
     // Header float
     let [headerFloat, setHeaderFloat] = useState("");
-    useEffect(() => {
-        function headerFloat() {
-            let scrollTop = document.documentElement.scrollTop;
-            let header_bottom = document
-                .getElementById("header")
-                .getBoundingClientRect().bottom;
-            if (scrollTop > header_bottom) {
-                setHeaderFloat("floating");
-            } else {
-                setHeaderFloat("");
-            }
+    function funcHeaderFloat() {
+        let scrollTop = document.documentElement.scrollTop;
+        let header_bottom = document
+            .getElementById("header")
+            .getBoundingClientRect().bottom;
+        if (scrollTop > header_bottom) {
+            setHeaderFloat("floating");
+        } else {
+            setHeaderFloat("");
         }
+    }
 
-        function elemAnimation() {
-            let scrollTop = document.documentElement.scrollTop;
-            const elements = document.querySelectorAll('.elem_animate');
+    function elemAnimation() {
+        let scrollTop = document.documentElement.scrollTop;
+        const elements = document.querySelectorAll('.elem_animate');
 
-            elements.forEach((element, index) => {
-                const { top } = element.getBoundingClientRect();
+        elements.forEach((element, index) => {
+            let { top } = element.getBoundingClientRect();
+            top = scrollTop + top
+            let windowHeight = window.innerHeight
 
-                if (scrollTop >= top) {
-                    setTimeout(() => {
-                        element.classList.add('animated');
-                    }, index * 300);
-                }
-                // else {
-                //     element.classList.remove('animated');
-                // }
-            });
-        };
+            if (scrollTop + (windowHeight / 1.5) >= top) {
+                element.classList.add('animated');
+            }
+        });
+    };
 
-        headerFloat();
+    useEffect(() => {
+        funcHeaderFloat();
         elemAnimation();
-        window.addEventListener('scroll', headerFloat);
+        window.addEventListener('scroll', funcHeaderFloat);
         window.addEventListener('scroll', elemAnimation);
 
         // clean-up함수
         return () => {
-            window.removeEventListener('scroll', headerFloat);
+            window.removeEventListener('scroll', funcHeaderFloat);
             window.removeEventListener('scroll', elemAnimation);
         };
     }, []);
@@ -359,40 +353,7 @@ function App() {
                                 </p>
 
                                 <div id="loan-img-slide" className="loan__img-wrap">
-                                    <Swiper
-                                        effect={'fade'}
-                                        autoplay={{
-                                            delay: 3000,
-                                            disableOnInteraction: false,
-                                        }}
-                                        modules={[Autoplay, EffectFade]}
-                                    >
-                                        <SwiperSlide>
-                                            <img src="/imgs/main/loan_img_1.png" alt="" className="loan__img-item" />
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <img src="/imgs/main/loan_img_2.png" alt="" className="loan__img-item" />
-                                        </SwiperSlide>
-                                    </Swiper>
-
-                                    <img src="/imgs/main/consumption_img_bg.png" alt="" className="loan__img-bg" />
-                                </div>
-
-                                <div className="loan__desc-wrap">
-                                    <div className="loan__desc-bold ">
-                                        <p className="elem_animate up">한도는 높게,</p>
-                                        <p className="elem_animate up">금리는 <span className="gray">낮게,</span></p>
-                                        <p className="elem_animate up">부담은 <span className="lightgray">적게.</span></p>
-                                    </div>
-                                    <div className="loan__desc-small">
-                                        앉은 자리에서 여러 은행의 한도와 금리를 비교하고<br />
-                                        내게 꼭 맞는 대출을 찾아보세요.<br />
-                                        신용, 비상금, 대환, 주택담보대출 모두 가능해요.
-                                    </div>
-                                </div>
-
-                                {/* <div className="loan__right">
-                                    <div id="loan-img-slide" className="loan__img-wrap">
+                                    <div className=" elem_animate up">
                                         <Swiper
                                             effect={'fade'}
                                             autoplay={{
@@ -411,7 +372,20 @@ function App() {
 
                                         <img src="/imgs/main/consumption_img_bg.png" alt="" className="loan__img-bg" />
                                     </div>
-                                </div> */}
+                                </div>
+
+                                <div className="loan__desc-wrap elem_animate up">
+                                    <div className="loan__desc-bold ">
+                                        <p className="elem_animate up">한도는 높게,</p>
+                                        <p className="elem_animate up">금리는 <span className="gray">낮게,</span></p>
+                                        <p className="elem_animate up">부담은 <span className="lightgray">적게.</span></p>
+                                    </div>
+                                    <div className="loan__desc-small">
+                                        앉은 자리에서 여러 은행의 한도와 금리를 비교하고<br />
+                                        내게 꼭 맞는 대출을 찾아보세요.<br />
+                                        신용, 비상금, 대환, 주택담보대출 모두 가능해요.
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -471,20 +445,20 @@ function App() {
                 <section className="main-sec invest" ref={investContainerRef}>
                     <div className="inner">
                         <div className="main-sec__wrap">
-                            <h1 className="main-sec__title">투자</h1>
-                            <p className="main-sec__desc">
+                            <h1 className="main-sec__title elem_animate up">투자</h1>
+                            <p className="main-sec__desc elem_animate up">
                                 투자,<br />
                                 모두가 할 수 있도록
                             </p>
 
-                            <div className="invest__content-wrap">
+                            <div className="invest__content-wrap elem_animate up">
                                 <div className="invest__desc-wrap">
-                                    <p className="main-sec__small-desc">
+                                    <p className="main-sec__small-desc elem_animate up">
                                         이해하기 쉬운 용어, <br className="hide_1024" />
                                         설명이 필요 없는 <br className="hide_1024" />
                                         직관적인 화면 구성,
                                     </p>
-                                    <p className="main-sec__small-desc">
+                                    <p className="main-sec__small-desc elem_animate up">
                                         송금처럼 쉬운 구매 경험 <br className="hide_1024" />
                                         그리고 투자 판단에 <br className="hide_1024" />
                                         도움을 주는 콘텐츠까지
@@ -520,7 +494,7 @@ function App() {
                                 </div>
                             </div>
 
-                            <p className="invest__desc main-sec__small-desc">
+                            <p className="invest__desc main-sec__small-desc elem_animate up">
                                 별도 앱 설치 없이 토스에서 바로,<br />
                                 토스증권으로 나만의 투자를 시작해 보세요.
                             </p>
@@ -549,7 +523,7 @@ function App() {
                                 나에게 딱 맞게
                             </p>
                             <div className="fit__content-wrap">
-                                <div className="fit-section">
+                                <div className="fit-section elem_animate up">
                                     <div className="fit-section__item">
                                         <div className="img-wrap">
                                             <img src="/imgs/main/fit_img_1.jpg" alt="" className="img" />
@@ -566,7 +540,7 @@ function App() {
                                 </div>
 
 
-                                <div className="fit-section">
+                                <div className="fit-section elem_animate up">
                                     <div className="fit-section__item">
                                         <div className="img-wrap">
                                             <img src="/imgs/main/fit_img_2.jpg" alt="" className="img" />
@@ -588,7 +562,7 @@ function App() {
                                 </div>
 
 
-                                <div className="fit-section">
+                                <div className="fit-section elem_animate up">
                                     <div className="fit-section__item">
                                         <div className="img-wrap">
                                             <img src="/imgs/main/fit_img_4.jpg" alt="" className="img" />
@@ -664,10 +638,10 @@ function App() {
 
                 {/* Section - 사업도 토스와 함께 */}
                 <section className="main-sec business">
-                    <div className="business__img-wrap">
+                    <div className="business__img-wrap elem_animate up">
                         <img src="/imgs/main/business_img_1.jpg" alt="" />
                     </div>
-                    <div className="business__desc">
+                    <div className="business__desc elem_animate up">
                         <h4 className="business__desc__title">사업도 토스와 함께</h4>
                         <p className="business__desc__small">
                             사업을 시작하셨나요?<br />
@@ -675,7 +649,7 @@ function App() {
                             이제 토스와 함께 하세요.
                         </p>
                     </div>
-                    <div className="business__link-wrap">
+                    <div className="business__link-wrap elem_animate up">
                         <ul className="business__link-list">
                             <li className="business__link-item">
                                 <h5 className="business__link-title">토스결제</h5>
