@@ -249,13 +249,13 @@ function App() {
                             </p>
                             <div className="consumption__img-wrap" ref={consumptionContainerRef}>
                                 <div className="consumption__img-item first elem_animate up">
-                                    <img src="/imgs/main/consumption_img_2.png" alt="" className="consumption__img-img" />
-                                    <img src="/imgs/main/consumption_img_bg.png" alt="" className="consumption__img-bg" />
+                                    <img src={`${process.env.PUBLIC_URL}/imgs/main/consumption_img_2.png`} alt="" className="consumption__img-img" />
+                                    <img src={`${process.env.PUBLIC_URL}/imgs/main/consumption_img_bg.png`} alt="" className="consumption__img-bg" />
                                 </div>
 
                                 <div className="consumption__img-item second elem_animate up">
-                                    <img src="/imgs/main/consumption_img_1.png" alt="" className="consumption__img-img" />
-                                    <img src="/imgs/main/consumption_img_bg.png" alt="" className="consumption__img-bg" />
+                                    <img src={`${process.env.PUBLIC_URL}/imgs/main/consumption_img_1.png`} alt="" className="consumption__img-img" />
+                                    <img src={`${process.env.PUBLIC_URL}/imgs/main/consumption_img_bg.png`} alt="" className="consumption__img-bg" />
                                 </div>
                             </div>
                             <p className="consumption__desc main-sec__small-desc elem_animate up">
@@ -294,7 +294,7 @@ function App() {
                                             </p>
                                         </div>
                                         <div className="transfer__item-right elem_animate up">
-                                            <img src="/imgs/main/transfer_img_1.png" alt="" />
+                                            <img src={`${process.env.PUBLIC_URL}/imgs/main//transfer_img_1.png`} alt="" />
                                         </div>
                                     </li>
                                     <li className="transfer__item">
@@ -313,7 +313,7 @@ function App() {
                                             </p>
                                         </div>
                                         <div className="transfer__item-right elem_animate up">
-                                            <img src="/imgs/main/transfer_img_2.png" alt="" />
+                                            <img src={`${process.env.PUBLIC_URL}/imgs/main/transfer_img_2.png`} alt="" />
                                         </div>
                                     </li>
                                     <li className="transfer__item">
@@ -331,7 +331,7 @@ function App() {
                                             </p>
                                         </div>
                                         <div className="transfer__item-right elem_animate up">
-                                            <img src="/imgs/main/transfer_img_3.png" alt="" />
+                                            <img src={`${process.env.PUBLIC_URL}/imgs/main/transfer_img_3.png`} alt="" />
                                         </div>
                                     </li>
                                 </ul>
@@ -363,14 +363,14 @@ function App() {
                                             modules={[Autoplay, EffectFade]}
                                         >
                                             <SwiperSlide>
-                                                <img src="/imgs/main/loan_img_1.png" alt="" className="loan__img-item" />
+                                                <img src={`${process.env.PUBLIC_URL}/imgs/main/loan_img_1.png`} alt="" className="loan__img-item" />
                                             </SwiperSlide>
                                             <SwiperSlide>
-                                                <img src="/imgs/main/loan_img_2.png" alt="" className="loan__img-item" />
+                                                <img src={`${process.env.PUBLIC_URL}/imgs/main/loan_img_2.png`} alt="" className="loan__img-item" />
                                             </SwiperSlide>
                                         </Swiper>
 
-                                        <img src="/imgs/main/consumption_img_bg.png" alt="" className="loan__img-bg" />
+                                        <img src={`${process.env.PUBLIC_URL}/imgs/main/consumption_img_bg.png`} alt="" className="loan__img-bg" />
                                     </div>
                                 </div>
 
@@ -404,7 +404,7 @@ function App() {
                             <div className="credit__content-wrap">
                                 <div className="credit__layout elem_animate up">
                                     <div className="credit__layout-item">
-                                        <img src="/imgs/main/credit_img_1.png" alt="credit 1" className="credit__layout-img" />
+                                        <img src={`${process.env.PUBLIC_URL}/imgs/main/credit_img_1.png`} alt="credit 1" className="credit__layout-img" />
                                         <p className="credit__layout-title">내 신용점수</p>
                                         <p className="credit__layout-desc">
                                             언제 어디서든, 원할 때 간편하게<br />
@@ -412,7 +412,7 @@ function App() {
                                         </p>
                                     </div>
                                     <div className="credit__layout-item">
-                                        <img src="/imgs/main/credit_img_2.png" alt="credit 2" className="credit__layout-img" />
+                                        <img src={`${process.env.PUBLIC_URL}/imgs/main/credit_img_2.png`} alt="credit 2" className="credit__layout-img" />
                                         <p className="credit__layout-title">신용점수 올리기</p>
                                         <p className="credit__layout-desc">
                                             통신비, 일반 납부내역 등의 서류를<br />
@@ -420,7 +420,7 @@ function App() {
                                         </p>
                                     </div>
                                     <div className="credit__layout-item">
-                                        <img src="/imgs/main/credit_img_3.png" alt="credit 3" className="credit__layout-img" />
+                                        <img src={`${process.env.PUBLIC_URL}/imgs/main/credit_img_3.png`} alt="credit 3" className="credit__layout-img" />
                                         <p className="credit__layout-title">신용관리 알림</p>
                                         <p className="credit__layout-desc">
                                             신용점수에 변동이 생기면 토스가 알람을 보내드려요.<br />
@@ -428,7 +428,7 @@ function App() {
                                         </p>
                                     </div>
                                     <div className="credit__layout-item">
-                                        <img src="/imgs/main/credit_img_4.png" alt="credit 4" className="credit__layout-img" />
+                                        <img src={`${process.env.PUBLIC_URL}/imgs/main/credit_img_4.png`} alt="credit 4" className="credit__layout-img" />
                                         <p className="credit__layout-title">신용관리 팁</p>
                                         <p className="credit__layout-desc">
                                             신용점수 관리가 막막하다면?<br />
@@ -466,29 +466,29 @@ function App() {
                                 </div>
 
                                 <div className="invest__img-wrap">
-                                    <img src="/imgs/main/invest_img_1.png" alt="" className="invest__img-img" />
-                                    <img src="/imgs/main/consumption_img_bg.png" alt="" className="invest__img-bg" />
+                                    <img src={`${process.env.PUBLIC_URL}/imgs/main/invest_img_1.png`} alt="" className="invest__img-img" />
+                                    <img src={`${process.env.PUBLIC_URL}/imgs/main/consumption_img_bg.png`} alt="" className="invest__img-bg" />
                                     <div className="invest__img-list" ref={investItemListRef}>
                                         <div className="invest__img-item" ref={ref => investItemRef.current[0] = ref}>
-                                            <img src="/imgs/main/invest_img_6.png" alt="" />
+                                            <img src={`${process.env.PUBLIC_URL}/imgs/main/invest_img_6.png`} alt="" />
                                         </div>
                                         <div className="invest__img-item" ref={ref => investItemRef.current[1] = ref}>
-                                            <img src="/imgs/main/invest_img_8.png" alt="" />
+                                            <img src={`${process.env.PUBLIC_URL}/imgs/main/invest_img_8.png`} alt="" />
                                         </div>
                                         <div className="invest__img-item" ref={ref => investItemRef.current[2] = ref}>
-                                            <img src="/imgs/main/invest_img_7.png" alt="" />
+                                            <img src={`${process.env.PUBLIC_URL}/imgs/main/invest_img_7.png`} alt="" />
                                         </div>
                                         <div className="invest__img-item show" ref={ref => investItemRef.current[3] = ref}>
-                                            <img src="/imgs/main/invest_img_5.png" alt="" />
+                                            <img src={`${process.env.PUBLIC_URL}/imgs/main/invest_img_5.png`} alt="" />
                                         </div>
                                         <div className="invest__img-item" ref={ref => investItemRef.current[4] = ref}>
-                                            <img src="/imgs/main/invest_img_2.png" alt="" />
+                                            <img src={`${process.env.PUBLIC_URL}/imgs/main/invest_img_2.png`} alt="" />
                                         </div>
                                         <div className="invest__img-item" ref={ref => investItemRef.current[5] = ref}>
-                                            <img src="/imgs/main/invest_img_4.png" alt="" />
+                                            <img src={`${process.env.PUBLIC_URL}/imgs/main/invest_img_4.png`} alt="" />
                                         </div>
                                         <div className="invest__img-item" ref={ref => investItemRef.current[6] = ref}>
-                                            <img src="/imgs/main/invest_img_3.png" alt="" />
+                                            <img src={`${process.env.PUBLIC_URL}/imgs/main/invest_img_3.png`} alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -526,7 +526,7 @@ function App() {
                                 <div className="fit-section elem_animate up">
                                     <div className="fit-section__item">
                                         <div className="img-wrap">
-                                            <img src="/imgs/main/fit_img_1.jpg" alt="" className="img" />
+                                            <img src={`${process.env.PUBLIC_URL}/imgs/main/fit_img_1.jpg`} alt="" className="img" />
                                         </div>
                                         <div className="fit-section__title">
                                             내 문서함 <span className="gray">공공문서 확인부터<br className="hide show_640" /> 납부까지 한 번에</span>
@@ -543,7 +543,7 @@ function App() {
                                 <div className="fit-section elem_animate up">
                                     <div className="fit-section__item">
                                         <div className="img-wrap">
-                                            <img src="/imgs/main/fit_img_2.jpg" alt="" className="img" />
+                                            <img src={`${process.env.PUBLIC_URL}/imgs/main/fit_img_2.jpg`} alt="" className="img" />
                                         </div>
                                         <div className="fit-section__title">
                                             보험<br />
@@ -552,7 +552,7 @@ function App() {
                                     </div>
                                     <div className="fit-section__item">
                                         <div className="img-wrap">
-                                            <img src="/imgs/main/fit_img_3.jpg" alt="" className="img" />
+                                            <img src={`${process.env.PUBLIC_URL}/imgs/main/fit_img_3.jpg`} alt="" className="img" />
                                         </div>
                                         <div className="fit-section__desc">
                                             또래보다 보험료는 적절하게 내고 있는지, 낸 만큼 보장받고 있는지 확인해 보세요.<br />
@@ -565,7 +565,7 @@ function App() {
                                 <div className="fit-section elem_animate up">
                                     <div className="fit-section__item">
                                         <div className="img-wrap">
-                                            <img src="/imgs/main/fit_img_4.jpg" alt="" className="img" />
+                                            <img src={`${process.env.PUBLIC_URL}/imgs/main/fit_img_4.jpg`} alt="" className="img" />
                                         </div>
                                         <div className="text-wrap">
                                             <div className="fit-section__title">
@@ -597,7 +597,7 @@ function App() {
                             <div className="credit__content-wrap">
                                 <div className="credit__layout elem_animate up">
                                     <div className="credit__layout-item">
-                                        <img src="/imgs/main/finance_service_img_1.png" alt="finance service 1" className="credit__layout-img" />
+                                        <img src={`${process.env.PUBLIC_URL}/imgs/main/finance_service_img_1.png`} alt="finance service 1" className="credit__layout-img" />
                                         <p className="credit__layout-title">숨은 정부지원금 찾기</p>
                                         <p className="credit__layout-desc">
                                             생각지도 못한 지원금이 기다리고 있어요.<br />
@@ -606,7 +606,7 @@ function App() {
                                         </p>
                                     </div>
                                     <div className="credit__layout-item">
-                                        <img src="/imgs/main/finance_service_img_2.png" alt="finance service 2" className="credit__layout-img" />
+                                        <img src={`${process.env.PUBLIC_URL}/imgs/main/finance_service_img_2.png`} alt="finance service 2" className="credit__layout-img" />
                                         <p className="credit__layout-title">카드 혜택 추천</p>
                                         <p className="credit__layout-desc">
                                             이제, 카드를 내 생활패턴에 맞게.<br />
@@ -614,7 +614,7 @@ function App() {
                                         </p>
                                     </div>
                                     <div className="credit__layout-item">
-                                        <img src="/imgs/main/finance_service_img_3.png" alt="finance service 3" className="credit__layout-img" />
+                                        <img src={`${process.env.PUBLIC_URL}/imgs/main/finance_service_img_3.png`} alt="finance service 3" className="credit__layout-img" />
                                         <p className="credit__layout-title">토스프라임</p>
                                         <p className="credit__layout-desc">
                                             매일 토스와 함께 하신다면 가입해보세요.<br />
@@ -623,7 +623,7 @@ function App() {
                                         </p>
                                     </div>
                                     <div className="credit__layout-item">
-                                        <img src="/imgs/main/finance_service_img_4.png" alt="finance service 4" className="credit__layout-img" />
+                                        <img src={`${process.env.PUBLIC_URL}/imgs/main/finance_service_img_4.png`} alt="finance service 4" className="credit__layout-img" />
                                         <p className="credit__layout-title">ATM 현금 찾기</p>
                                         <p className="credit__layout-desc">
                                             카드 없이 휴대전화만 챙겨 나와도 됩니다.<br />
@@ -639,7 +639,7 @@ function App() {
                 {/* Section - 사업도 토스와 함께 */}
                 <section className="main-sec business">
                     <div className="business__img-wrap elem_animate up">
-                        <img src="/imgs/main/business_img_1.jpg" alt="" />
+                        <img src={`${process.env.PUBLIC_URL}/imgs/main/business_img_1.jpg`} alt="" />
                     </div>
                     <div className="business__desc elem_animate up">
                         <h4 className="business__desc__title">사업도 토스와 함께</h4>

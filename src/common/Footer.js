@@ -83,11 +83,11 @@ function Footer() {
                     {/* sns */}
                     <div className="sns-info">
                         <ul className="sns-info__list">
-                            <li><a href="#"><img src="/imgs/footer/icn-facebook.svg"></img></a></li>
-                            <li><a href="#"><img src="/imgs/footer/icn-blog.svg"></img></a></li>
-                            <li><a href="#"><img src="/imgs/footer/icn-naver.svg"></img></a></li>
-                            <li><a href="#"><img src="/imgs/footer/icn-twitter.svg"></img></a></li>
-                            <li><a href="#"><img src="/imgs/footer/icn-instagram.svg"></img></a></li>
+                            <li><a href="#"><img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-facebook.svg`}></img></a></li>
+                            <li><a href="#"><img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-blog.svg`}></img></a></li>
+                            <li><a href="#"><img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-naver.svg`}></img></a></li>
+                            <li><a href="#"><img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-twitter.svg`}></img></a></li>
+                            <li><a href="#"><img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-instagram.svg`}></img></a></li>
                         </ul>
                     </div>
                 </div>
