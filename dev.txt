@@ -15,9 +15,7 @@ pc / tablet(1024) / mobile(640)
  -> 이미지경로 참고 : https://whales.tistory.com/95
                    : https://create-react-app.dev/docs/using-the-public-folder/
 
-*5. 컴포넌트 분리
-*6. 개발자도구로 보면서 컴포넌트 여러번 로드되는 현상 줄이기
-
+*5. 컴포넌트 분리 ㅇ
 
 *7. Header fixed요소 - IOS position:fixed버그 해결하기
 

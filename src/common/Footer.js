@@ -1,5 +1,5 @@
 function Footer() {
-    let gnb = [
+    const gnb = [
         ['서비스', [
             '공지사항', '자주 묻는 질문', '공동인증서 관리', '계정 일시 잠금', '고객센터', '브랜드 리소스센터', '토스의 개인정보 보호', '토스유스카드', '토스 공동구매 입점'
         ]],
@@ -15,7 +15,7 @@ function Footer() {
         ]]
     ];
 
-    let terms = [
+    const terms = [
         '서비스 이용약관', '통합 금융정보 서비스 약관', '마이데이터 서비스 이용약관', '이용자의 권리 및 유의사항', '개인정보 처리방침', '채용팀 개인정보 처리방침', '어드민 서비스 개인정보 처리방침', '영상정보처리기기 운영 관리 방침', '위치기반서비스 이용약관', '가맹점 고지사항', '토스 전자서명인증업무준칙', '토스 전자인증서비스 약관', '금융소비자보호'
     ];
 
@@ -52,10 +52,9 @@ function Footer() {
 
                     {/* company info */}
                     <div className="company-info">
-                        <div className="company-info__title">㈜ O O O O</div>
+                        <div className="company-info__title">㈜ T O S S</div>
                         <address className="company-info__address">
                             사업자 등록번호 : 000-00-000000 | 대표 : OOO<br />
-
                             호스팅 서비스 : 주식회사 OOOOOO | 통신판매업 신고번호 : 0000-AA-000000 <a href="/clone_toss_react" className="chk-business-info">사업자정보확인</a><br />
                         </address>
                     </div>
@@ -79,11 +78,31 @@ function Footer() {
                     {/* sns */}
                     <div className="sns-info">
                         <ul className="sns-info__list">
-                            <li><a href="/clone_toss_react"><img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-facebook.svg`}></img></a></li>
-                            <li><a href="/clone_toss_react"><img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-blog.svg`}></img></a></li>
-                            <li><a href="/clone_toss_react"><img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-naver.svg`}></img></a></li>
-                            <li><a href="/clone_toss_react"><img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-twitter.svg`}></img></a></li>
-                            <li><a href="/clone_toss_react"><img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-instagram.svg`}></img></a></li>
+                            <li>
+                                <a href="/clone_toss_react">
+                                    <img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-facebook.svg`} />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/clone_toss_react">
+                                    <img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-blog.svg`} />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/clone_toss_react">
+                                    <img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-naver.svg`} />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/clone_toss_react">
+                                    <img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-twitter.svg`} />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/clone_toss_react">
+                                    <img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-instagram.svg`} />
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
