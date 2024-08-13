@@ -10,8 +10,8 @@ function Footer() {
             '사업 제휴', '공동구매 입점문의', '광고 문의', '인증 사업 문의', '마케팅·PR', 'IR'
         ]],
         ['고객센터', [
-            '전화: 0000-0000(24시간 연중무휴)', '이메일(고객전용): support@toss.im',
-            '이메일(외부기관전용): safe@toss.im', '민원 접수'
+            '전화: 0000-0000(24시간 연중무휴)', '이메일(고객전용): abcde@oooo.oo',
+            '이메일(외부기관전용): abcde@oooo.oo', '민원 접수'
         ]]
     ];
 
@@ -38,7 +38,7 @@ function Footer() {
                                             depth2.map((el2, idx2) => {
                                                 return (
                                                     <li key={idx2} className="f-gnb__sub-item">
-                                                        <a href="#">{el2}</a>
+                                                        <a href="/clone_toss_react">{el2}</a>
                                                     </li>
                                                 )
                                             })
@@ -52,15 +52,11 @@ function Footer() {
 
                     {/* company info */}
                     <div className="company-info">
-                        <div className="company-info__title">㈜비바리퍼블리카</div>
+                        <div className="company-info__title">㈜ O O O O</div>
                         <address className="company-info__address">
-                            사업자 등록번호 : 120-88-01280 | 대표 : 이승건<br />
+                            사업자 등록번호 : 000-00-000000 | 대표 : OOO<br />
 
-                            호스팅 서비스 : 주식회사 비바리퍼블리카 | 통신판매업 신고번호 : 2014-서울강남-03377 <a href="#" className="chk-business-info">사업자정보확인</a><br />
-
-                            06236 서울특별시 강남구 테헤란로 142, 4층, 10층, 11층, 12층, 13층, 22층, 23층 (역삼동, 아크플레이스)<br />
-
-                            고객센터 : 서울특별시 강남구 테헤란로 133, 9층 (역삼동, 한국타이어빌딩)
+                            호스팅 서비스 : 주식회사 OOOOOO | 통신판매업 신고번호 : 0000-AA-000000 <a href="/clone_toss_react" className="chk-business-info">사업자정보확인</a><br />
                         </address>
                     </div>
 
@@ -72,7 +68,7 @@ function Footer() {
                                 let strong = strongIdx.includes(idx) ? 'strong' : '';
                                 let el = (
                                     <li key={idx} className={"terms-info__item " + strong}>
-                                        <a href="#">{term}</a>
+                                        <a href="/clone_toss_react">{term}</a>
                                     </li>
                                 )
                                 return el;
@@ -83,11 +79,11 @@ function Footer() {
                     {/* sns */}
                     <div className="sns-info">
                         <ul className="sns-info__list">
-                            <li><a href="#"><img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-facebook.svg`}></img></a></li>
-                            <li><a href="#"><img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-blog.svg`}></img></a></li>
-                            <li><a href="#"><img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-naver.svg`}></img></a></li>
-                            <li><a href="#"><img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-twitter.svg`}></img></a></li>
-                            <li><a href="#"><img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-instagram.svg`}></img></a></li>
+                            <li><a href="/clone_toss_react"><img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-facebook.svg`}></img></a></li>
+                            <li><a href="/clone_toss_react"><img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-blog.svg`}></img></a></li>
+                            <li><a href="/clone_toss_react"><img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-naver.svg`}></img></a></li>
+                            <li><a href="/clone_toss_react"><img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-twitter.svg`}></img></a></li>
+                            <li><a href="/clone_toss_react"><img src={`${process.env.PUBLIC_URL}/imgs/footer/icn-instagram.svg`}></img></a></li>
                         </ul>
                     </div>
                 </div>

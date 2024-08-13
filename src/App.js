@@ -157,7 +157,7 @@ function App() {
             top = scrollTop + top
             let windowHeight = window.innerHeight
 
-            if (scrollTop + (windowHeight / 1.5) >= top) {
+            if (scrollTop + (windowHeight / 1.05) >= top) {
                 element.classList.add('animated');
             }
         });
@@ -194,11 +194,11 @@ function App() {
                         <div className="intro__top elem_animate">
                             <p className="intro__text">금융의 모든 것 <br /> 토스에서 쉽고 간편하게</p>
                             <div className="intro__btn-wrap">
-                                <a href="#" className="intro__app-btn">
+                                <a href="/clone_toss_react" className="intro__app-btn">
                                     <img src="https://static.toss.im/png-icons/timeline/applekorea.png" alt="" height="24" width="24" />
                                     <span className="poppins">App Store</span>
                                 </a>
-                                <a href="#" className="intro__app-btn">
+                                <a href="/clone_toss_react" className="intro__app-btn">
                                     <img src="https://static.toss.im/png-icons/timeline/googleplay.png" alt="" height="24" width="24" />
                                     <span className="poppins">Google Play</span>
                                 </a>
@@ -658,7 +658,7 @@ function App() {
                                     간편한 결제 경험으로 비용은<br />
                                     절감하고 매출은 늘리세요.
                                 </p>
-                                <a href="#" className="business__link-btn">가맹점 문의하기</a>
+                                <a href="/clone_toss_react" className="business__link-btn">가맹점 문의하기</a>
                             </li>
                             <li className="business__link-item">
                                 <h5 className="business__link-title">내 매출 장부</h5>
@@ -666,7 +666,7 @@ function App() {
                                     내 매출 장부 따로 관리할 필요 없어요.<br />
                                     총 매출, 총 입금, 총 지출을 보기 쉽게 알려드려요.
                                 </p>
-                                <a href="#" className="business__link-btn">자세히 알아보기</a>
+                                <a href="/clone_toss_react" className="business__link-btn">자세히 알아보기</a>
                             </li>
                             <li className="business__link-item">
                                 <h5 className="business__link-title">토스페이먼츠</h5>
@@ -675,7 +675,7 @@ function App() {
                                     온라인 결제 토스페이먼츠와<br />
                                     함께 해보세요.
                                 </p>
-                                <a href="#" className="business__link-btn">홈페이지 바로가기</a>
+                                <a href="/clone_toss_react" className="business__link-btn">홈페이지 바로가기</a>
                             </li>
                             <li className="business__link-item">
                                 <h5 className="business__link-title">토스플레이스</h5>
@@ -684,7 +684,7 @@ function App() {
                                     오프라인 매장을 위한<br />
                                     모든 것이 준비되어 있어요.
                                 </p>
-                                <a href="#" className="business__link-btn">홈페이지 바로가기</a>
+                                <a href="/clone_toss_react" className="business__link-btn">홈페이지 바로가기</a>
                             </li>
 
                         </ul>

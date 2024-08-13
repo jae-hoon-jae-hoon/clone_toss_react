@@ -39,47 +39,52 @@ function Header(props) {
     // Render
     return (
         <BrowserRouter>
-            <Routes>
+            {/* <Routes>
                 <Route path="/" element={''}></Route>
                 <Route path="/team" element={<TeamPage />}></Route>
-            </Routes>
+            </Routes> */}
 
             <header id="header" className={"header " + props.headerFloat}>
                 <div className="inner df sb aic">
                     <div className="logo">
-                        <Link to='/' className="logo__link">
+                        {/* <Link to='/clone_toss_react' className="logo__link">
                             <h1>
                                 <img src={process.env.PUBLIC_URL + '/imgs/main/toss_logo.png'} alt="toss logo" />
                             </h1>
-                        </Link>
+                        </Link> */}
+                        <a href="/clone_toss_react" className="logo__link">
+                            <h1>
+                                <img src={process.env.PUBLIC_URL + '/imgs/main/toss_logo.png'} alt="toss logo" />
+                            </h1>
+                        </a>
                     </div>
                     <div className="header__right df sb">
                         {!isMobile &&
                             <>
                                 <ul className="gnb df aic">
                                     <li>
-                                        <a href="#">회사 소개</a>
+                                        <a href="/clone_toss_react">회사 소개</a>
                                     </li>
                                     <li>
-                                        <a href="#">고객센터</a>
+                                        <a href="/clone_toss_react">고객센터</a>
                                     </li>
                                     <li>
-                                        <a href="#">자주 묻는 질문</a>
+                                        <a href="/clone_toss_react">자주 묻는 질문</a>
                                     </li>
                                     <li>
-                                        <a href="#">토스인증서</a>
+                                        <a href="/clone_toss_react">토스인증서</a>
                                     </li>
                                     <li>
-                                        <a href="#">채용</a>
+                                        <a href="/clone_toss_react">채용</a>
                                     </li>
                                 </ul>
 
                                 <ul className="lang df aic">
                                     <li className="active">
-                                        <a href="#">KOR</a>
+                                        <a href="/clone_toss_react">KOR</a>
                                     </li>
                                     <li>
-                                        <a href="#">ENG</a>
+                                        <a href="/clone_toss_react">ENG</a>
                                     </li>
                                 </ul>
                             </>
@@ -102,28 +107,28 @@ function Header(props) {
                         <div className={(isMobile && mobileGnbOpen) ? 'gnb-mobile show' : 'gnb-mobile'}>
                             <ul className="gnb-mobile__list">
                                 <li>
-                                    <a href="#">회사 소개</a>
+                                    <a href="/clone_toss_react">회사 소개</a>
                                 </li>
                                 <li>
-                                    <a href="#">고객센터</a>
+                                    <a href="/clone_toss_react">고객센터</a>
                                 </li>
                                 <li>
-                                    <a href="#">자주 묻는 질문</a>
+                                    <a href="/clone_toss_react">자주 묻는 질문</a>
                                 </li>
                                 <li>
-                                    <a href="#">토스인증서</a>
+                                    <a href="/clone_toss_react">토스인증서</a>
                                 </li>
                                 <li>
-                                    <a href="#">채용</a>
+                                    <a href="/clone_toss_react">채용</a>
                                 </li>
                             </ul>
 
                             <ul className="gnb-mobile__lang">
                                 <li className="active">
-                                    <a href="#">KOR</a>
+                                    <a href="/clone_toss_react">KOR</a>
                                 </li>
                                 <li>
-                                    <a href="#">ENG</a>
+                                    <a href="/clone_toss_react">ENG</a>
                                 </li>
                             </ul>
                         </div>
