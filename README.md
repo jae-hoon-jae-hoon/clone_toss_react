@@ -1,10 +1,10 @@
 # 토스 메인페이지 클론코딩
 
-## 소개
 리액트를 연습하면서 토스 메인 페이지를 클론 코딩 하였습니다.<br/>
 pc / tablet(1024px) / mobile(640px) 을 기준으로 반응형웹으로 동작하도록 만들었습니다.<br/>
 
 블로그 : [https://velog.io/@jeongjh159/%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9-%ED%86%A0%EC%8A%A4](https://velog.io/@jeongjh159/%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9-%ED%86%A0%EC%8A%A4)
+
 포트폴리오 : <a href="https://jae-hoon-jae-hoon.github.io/clone_toss_react/" target="_blank">https://jae-hoon-jae-hoon.github.io/clone_toss_react/</a>
 
 
